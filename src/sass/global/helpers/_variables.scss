@@ -4,20 +4,18 @@
 //
 
 //NEW INCLUDE FONTS FROM MIXIN
-@include font-face('Intro Alt', '../fonts/Intro-Black-Alt', 900, normal, eot woff ttf);
-@include font-face('Intro Alt', '../fonts/Intro-Book-Alt', 400, normal, eot woff ttf);
-@include font-face('Myriad Pro', '../fonts/MyriadProRegular', 400, normal, eot woff ttf);
-@include font-face('Myriad Pro', '../fonts/MyriadProSemiBold', 600, normal, eot woff ttf);
-@include font-face('Plumb', '../fonts/PlumbCondensed-Light', 300, normal, eot woff ttf);
+@include font-face('ProxiReg', '../fonts/ProximaNovaReg', 400, normal, eot woff ttf woff2);
+@include font-face('ProxiBold', '../fonts/ProximaNovaBold', 700, normal, eot woff ttf woff2);
 
-$font-family-main: 'Intro Alt', "Times New Roman", serif;
-$font-family-regular: 'Myriad Pro';
+
+$font-family-main: 'ProxiReg', "Times New Roman", serif;
+$font-family-bold: 'ProxiBold';
 $font-family-plumb: 'Plumb';
 
 //SIZE
 $font-size-main: 16px;
 $font-size-h1: 54px;
-$font-size-h2: 36px;
+$font-size-h2: 52px;
 $font-size-btn:24px;
 
 
@@ -34,31 +32,28 @@ $font-weight-main: 400;
 //
 $color-white: #fff;
 $color-black: #393939;
-$color-grey:#535353;
+$color-grey:#4a4a4a;
 
 //3. BUTTONS
 $button: (
 	max-width: 100%,
-	min-width: 459px,
+	min-width: 240px,
 	padding:0 10px,
-	height: 76px,
-	line-height: 76px,
+	height: 60px,
+	line-height: 60px,
 	font-family: $font-family-main,
-	font-size: 17px,
+	font-size: 16px,
 	font-weight: $font-weight-main,
-	border-radius: 38px,
-	background-image: linear-gradient(to top, #4b5ba8 0%, #4b5ba8 1%, #5ca6fb 100%),
-	box-shadow: 0 40px 60px rgba(56, 82, 161, 0.78)
+	border-radius: 30px
 );
 
 // 5. @MEDIA QUERIES
 //
 $breakpoints: (
-	"phone":   481px,
-	"tablet-small": 601px,
+	"phone":   320px,
 	"tablet":       768px,
-	"laptop":      980px,
-	"desktop":      1200px,
+	"laptop":      1024px,
+	"desktop":      1440px,
 	"desktop-max":      1920px,
 );
 

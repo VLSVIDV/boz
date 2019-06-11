@@ -13,13 +13,11 @@
 	min-width: btn(min-width);
 	max-width: btn(max-width);
 	height: btn(height);
-	box-shadow: 0 5px 30px rgba(31, 35, 37, 0.25);
 	//font
 	font-family: btn(font-family);
 	@include font-size(btn(font-size));
 	line-height: btn(line-height);
 	font-weight: btn(font-weight);
-	text-align: center;
 	text-decoration: none;
 	white-space: nowrap;
 	text-overflow: ellipsis;
@@ -43,14 +41,53 @@
 	&:hover{
 		cursor: pointer;
 	}
-	@include mq ('tablet', 'max') {
-		padding: 0 10px;
-	}
-	&.btn_full{
-		width: 100%;
-		min-width: 0;
-	}
 }
+
+//btn_primary
+
+.btn_primary{
+	padding: 0 117px 0 54px;
+	border: 1px solid #ffffff;
+	text-transform: uppercase;
+	background: transparent;
+	color:$color-white;
+	background: url("../images/arrow-right.png") no-repeat;
+	background-position: 86% 50%;
+}
+
+//btn_secondary
+
+.btn_secondary{
+	padding: 0 72px 0 29px;
+	color:$color-grey;
+	border: 1px solid $color-grey;
+}
+
+.btn_secondary-1{
+	background: url("../images/down-1.png") no-repeat 90% 50%;
+}
+
+.btn_secondary-2{
+	background: url("../images/down-pdf.png") no-repeat 90% 50%;
+}
+
+.btn_secondary-3{
+	background: url("../images/down-3.png") no-repeat 90% 50%;
+}
+
+//btn_green
+
+.btn_green{
+	padding: 0 100px 0 63px;
+	box-shadow: 0 2px 0 rgba(37, 64, 19, 0.48), inset 0 1px 3px rgba(255, 255, 255, 0.5);
+	border: 2px solid rgba(255, 255, 255, 0.19);
+	background: linear-gradient(180deg, #b4ec51 0%, #429321 100%), url("../images/icon-horn.png");
+	background-position: 86% 50%;
+	color: $color-white;
+	letter-spacing: 1.16px;
+	font-size: 18px;
+}
+
 /* disabled styles */
 .btn.disabled,
 .btn[disabled],
