@@ -1,0 +1,79 @@
+// input
+@function input($key) {
+	@if map-has-key($input, $key) {
+		@return map-get($input, $key);
+	}
+
+	@warn "Unknown `#{$key}` in $input.";
+	@return null;
+}
+// textarea
+@function textarea($key) {
+	@if map-has-key($textarea, $key) {
+		@return map-get($textarea, $key);
+	}
+
+	@warn "Unknown `#{$key}` in $textarea.";
+	@return null;
+}
+
+
+//
+// .inputEx {
+//   width: input(width);
+//   heigth: input(heigth);
+// }
+
+
+@mixin mq($width, $type: min) {
+	@if map_has_key($breakpoints, $width) {
+	 $width: map_get($breakpoints, $width);
+	 @if $type == max {
+		$width: $width - 1px;
+	 }
+	 @media only screen and (#{$type}-width: $width) {
+		@content;
+	 }
+	}
+}
+/////////
+// example
+// //////
+// .site-header {
+//   padding: 2rem;
+//   font-size: 1.8rem;
+//   @include mq('tablet-wide') {
+//    padding-top: 4rem;
+//    font-size: 2.4rem;
+//   }
+// }
+
+// _functions.scss
+@function z($key) {
+	@if map-has-key($z-layers, $key) {
+		@return map-get($z-layers, $key);
+	}
+
+	@warn "Unknown `#{$key}` in $z-layers.";
+	@return null;
+}
+
+// _component.scss
+// .overlay {
+//   z-index: z(overlay);
+// }
+
+// _functions.scss
+@function btn($key) {
+	@if map-has-key($button, $key) {
+		@return map-get($button, $key);
+	}
+
+	@warn "Unknown `#{$key}` in $button.";
+	@return null;
+}
+
+// _component.scss
+// .overlay {
+//   width: button(width);
+// }

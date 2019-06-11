@@ -1,0 +1,24 @@
+// variables,mixins,extends
+@import "global/helpers/helpers_all";
+@import "global/helpers/_custom-mixin.scss";
+@import "global/helpers/_family.scss";
+//normalize
+@import "global/normalize";
+
+// grid
+@import "global/grid/v3/bootstrap-grid.scss";
+
+// globals
+@import "global/global";
+@import "global/header";
+@import "global/footer";
+// sprite
+@import "sprite/sprite";
+
+//plugins
+@import "plugins/slick.scss";
+@import "plugins/slick-theme.scss";
+// //home
+@import "home/first";
+//pages styles
+@import "global/helpers/pages";

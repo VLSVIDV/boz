@@ -1,0 +1,73 @@
+@import "_functions.scss";
+//
+//1. FONTS
+//
+
+//NEW INCLUDE FONTS FROM MIXIN
+@include font-face('Intro Alt', '../fonts/Intro-Black-Alt', 900, normal, eot woff ttf);
+@include font-face('Intro Alt', '../fonts/Intro-Book-Alt', 400, normal, eot woff ttf);
+@include font-face('Myriad Pro', '../fonts/MyriadProRegular', 400, normal, eot woff ttf);
+@include font-face('Myriad Pro', '../fonts/MyriadProSemiBold', 600, normal, eot woff ttf);
+@include font-face('Plumb', '../fonts/PlumbCondensed-Light', 300, normal, eot woff ttf);
+
+$font-family-main: 'Intro Alt', "Times New Roman", serif;
+$font-family-regular: 'Myriad Pro';
+$font-family-plumb: 'Plumb';
+
+//SIZE
+$font-size-main: 16px;
+$font-size-h1: 54px;
+$font-size-h2: 36px;
+$font-size-btn:24px;
+
+
+//LINE HEIGHT
+$line-height-main: 1.2;
+
+
+//WEIGHT
+$font-weight-main: 400;
+
+
+//
+//2. COLORS
+//
+$color-white: #fff;
+$color-black: #393939;
+$color-grey:#535353;
+
+//3. BUTTONS
+$button: (
+	max-width: 100%,
+	min-width: 459px,
+	padding:0 10px,
+	height: 76px,
+	line-height: 76px,
+	font-family: $font-family-main,
+	font-size: 17px,
+	font-weight: $font-weight-main,
+	border-radius: 38px,
+	background-image: linear-gradient(to top, #4b5ba8 0%, #4b5ba8 1%, #5ca6fb 100%),
+	box-shadow: 0 40px 60px rgba(56, 82, 161, 0.78)
+);
+
+// 5. @MEDIA QUERIES
+//
+$breakpoints: (
+	"phone":   481px,
+	"tablet-small": 601px,
+	"tablet":       768px,
+	"laptop":      980px,
+	"desktop":      1200px,
+	"desktop-max":      1920px,
+);
+
+//
+// 6. Z-INDEX ELEMENTS
+//
+
+$z-layers: (
+	back: -1,
+	default: 1,
+	button: 3
+);

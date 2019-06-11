@@ -1,0 +1,31 @@
+### NPM / BOWER components
+node_modules/*
+bower_components/*
+
+### Sass template
+.sass-cache
+*.css.map
+
+### Project folders
+
+libs/*
+build/*
+psd/*
+temp/*
+
+
+### Project files
+*.zip
+*.rar
+*.psd
+*.sketch
+
+### Directory-based project format:
+.idea/
+*.swp
+*~
+*.iws
+*.log
+.project
+.DS_Store
+

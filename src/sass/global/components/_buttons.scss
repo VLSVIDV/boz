@@ -1,0 +1,71 @@
+/* ==========================================================================
+	 BUTTONS
+	 ===========================================================================*/
+.btn,
+.btn[type="button"]{
+	//position
+	position: relative;
+	z-index: z(button);
+	//box mmodel
+	display: inline-block;
+	vertical-align: middle;
+	padding: btn(padding);
+	min-width: btn(min-width);
+	max-width: btn(max-width);
+	height: btn(height);
+	box-shadow: 0 5px 30px rgba(31, 35, 37, 0.25);
+	//font
+	font-family: btn(font-family);
+	@include font-size(btn(font-size));
+	line-height: btn(line-height);
+	font-weight: btn(font-weight);
+	text-align: center;
+	text-decoration: none;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	// other
+	overflow: hidden;
+	border-radius: btn(border-radius);
+	cursor: pointer;
+
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-appearance: inherit;
+	z-index: 1;
+	transition: all .3s ease;
+	&:focus{
+		outline:none;
+	}
+	&:hover{
+		cursor: pointer;
+	}
+	@include mq ('tablet', 'max') {
+		padding: 0 10px;
+	}
+	&.btn_full{
+		width: 100%;
+		min-width: 0;
+	}
+}
+/* disabled styles */
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn{
+	cursor: not-allowed;
+	pointer-events: none;
+	opacity: .25;
+	filter: alpha(opacity=25);
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+button[type="button"]{
+	cursor: pointer;
+}
+
+
+
+/* end buttons*/

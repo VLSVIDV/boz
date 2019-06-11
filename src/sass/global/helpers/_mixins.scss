@@ -1,0 +1,398 @@
+//FONT FACE
+@mixin font_face($file_name,$font_name:$file_name,$path:$font_path,$weight:normal,$style:normal) {
+	@font-face {
+		font-family: quote($font_name);
+		src: url($path + $file-name + ".eot");
+		src: url($path + $file-name + ".eot?#iefix") format("embedded-opentype"), url($path + $file-name + ".woff") format("woff"), url($path + $file-name + ".ttf") format("truetype"), url($path + $file-name + ".svg##{$font_name}") format("svg");
+		font-weight: $weight;
+		font-style: $style;
+	}
+}
+// REM
+
+@function calculateRem($size) {
+		$remSize: $size / 16px;
+		@return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+		font-size: $size;
+		font-size: calculateRem($size);
+}
+
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@mixin rem-fallback($property, $values...) {
+  $max: length($values);
+  $pxValues: '';
+  $remValues: '';
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $pxValues: #{$pxValues + $value*16}px;
+
+    @if $i < $max {
+      $pxValues: #{$pxValues + " "};
+    }
+  }
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $remValues: #{$remValues + $value}rem;
+
+    @if $i < $max {
+      $remValues: #{$remValues + " "};
+    }
+  }
+
+  #{$property}: $pxValues;
+  #{$property}: $remValues;
+}
+
+//@include rem-fallback(margin, 10, 20, 30, 40);
+
+
+//REM FZ
+// @mixin font-size($sizeValue: 1.6) {
+//   font-size: ($sizeValue * 10) + px;
+//   font-size: $sizeValue + rem;
+// }
+//USE
+// p {
+//   @include font-size(14px)
+// }
+// RESULT
+// p {
+//   font-size: 14px; //Will be overridden if browser supports rem
+//   font-size: 0.8rem;
+// }
+
+
+@mixin appearance($value: button) {
+	-moz-appearance: $value;
+	-webkit-appearance: $value;
+	appearance: $value;
+}
+
+@mixin flex_block($flex-direction : row, $flex-wrap: wrap, $content : space-between, $align-items : flex-start,$align-content : flex-start) {
+
+	display: flex;
+	flex-direction: $flex-direction;
+	flex-wrap: $flex-wrap;
+	justify-content: $content;
+	align-content: $align-content;
+	align-items: $align-items;
+}
+
+@mixin clearfix {
+	&:after {
+		content: "";
+		display: block;
+		height: 0;
+		clear: both;
+		visibility: hidden;
+	}
+}
+
+@mixin inline_block_wrapper {
+	font-size: 0;
+	line-height: 0;
+	letter-spacing: -1px;
+}
+
+/*
+* UtilityBelt - a starter kit for any SASS project
+* By @dmtintner & @hackingui
+* Documentation and examples - hackingui.com/front-end/10-best-scss-utilities/
+* V1.2.0
+*/
+
+/*
+## Triangle
+* @include triangle within a pseudo element and add positioning properties (ie. top, left)
+* $direction: up, down, left, right
+*/
+@mixin triangle($direction, $size: 8px, $color: #222) {
+		content: '';
+		display: block;
+		position: absolute;
+		height: 0;
+		width: 0;
+		@if ($direction == 'up') {
+				border-bottom: $size solid $color;
+				border-left: $size solid transparent;
+				border-right: $size solid transparent;
+				border-top: none;
+		} @else if ($direction == 'down') {
+				border-top: $size solid $color;
+				border-left: $size solid transparent;
+				border-right: $size solid transparent;
+				border-bottom: none;
+		} @else if ($direction == 'left') {
+				border-top: $size solid transparent;
+				border-bottom: $size solid transparent;
+				border-right: $size solid $color;
+				border-left: none;
+		} @else if ($direction == 'right') {
+				border-top: $size solid transparent;
+				border-bottom: $size solid transparent;
+				border-left: $size solid $color;
+				border-right: none;
+		}
+}
+
+/*
+* Currency
+*/
+%currency {
+		position: relative;
+		&:before {
+				content: '$';
+				position: relative;
+				left: 0;
+		}
+}
+
+.USD %currency:before {
+		content: '$';
+}
+
+.EUR %currency:before {
+		content: '\20AC';
+}
+
+// must escape the html entities for each currency symbol
+.ILS %currency:before {
+		content: '\20AA';
+}
+
+.GBP %currency:before {
+		content: '\00A3';
+}
+
+/*
+* Clearfix
+*/
+%clearfix {
+	*zoom: 1;
+	&:before, &:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+//USE
+.container-with-floated-children {
+	@extend %clearfix;
+}
+
+
+/*
+* Respond To
+*/
+// Breakpoints for each query
+$smartphone: 568px;
+//iphone 5
+$tabletPortrait: 767px;
+$tabletLandscape: 1024px;
+$desktop: 1174px;
+$largeScreen: 1400px;
+$mediumDesktop: 1200px;
+@mixin respondTo($media) {
+		@if $media == smartphone {
+				@media (max-width: $smartphone) {
+						@content;
+				}
+		} @else if $media == tablet {
+				@media (min-width: $tabletPortrait) and (max-width: $tabletLandscape) {
+						@content;
+				}
+		} @else if $media == smallScreen {
+				@media (max-width: $desktop) {
+						@content;
+				}
+		} @else if $media == desktop {
+				@media (min-width: $desktop) {
+						@content;
+				}
+		} @else if $media == mediumDesktop {
+				@media (max-width: $mediumDesktop) {
+						@content;
+				}
+		} @else if $media == largeScreen {
+				@media (max-width: $largeScreen) {
+						@content;
+				}
+		}
+}
+
+/*
+* Ghost Vertical Align
+*/
+@mixin ghostVerticalAlign($pseudoEl: before) {
+		&:#{$pseudoEl} {
+				content: '';
+				display: inline-block;
+				vertical-align: middle;
+				height: 100%;
+				width: .1px;
+		}
+}
+
+%vertical-align {
+		@include ghostVerticalAlign();
+}
+
+%justify {
+		text-align: justify;
+		&:after {
+				// adds a false last line to the content so justify is applied
+				content: '';
+				display: inline-block;
+				width: 100%;
+		}
+}
+
+/*
+## Placeholder Color - for styling input placeholders in every browser
+*/
+@mixin placeholderColor($color) {
+		&::-webkit-input-placeholder {
+				-webkit-transition: color 200ms;
+				color: $color;
+		}
+		&:-moz-placeholder {
+				//Firefox 18-
+				-moz-transition: color 200ms;
+				color: $color;
+		}
+		&::-moz-placeholder {
+				-moz-transition: color 200ms;
+				color: $color;
+		}
+		&:-ms-input-placeholder {
+				color: $color;
+		}
+}
+
+@mixin placeholder {
+		&::-webkit-input-placeholder {
+				@content;
+		}
+
+		&:-moz-placeholder { /* Firefox 18- */
+				@content;
+		}
+
+		&::-moz-placeholder {  /* Firefox 19+ */
+				@content;
+		}
+
+		&:-ms-input-placeholder {
+				@content;
+		}
+}
+
+// input { @include placeholder {
+//     font-family: $base-font-family;
+//     color: red;
+// }}
+
+%customScrollBar {
+		&::-webkit-scrollbar {
+				width: 11px;
+		}
+
+		&::-webkit-scrollbar-button {
+				display: none;
+		}
+
+		&::-webkit-scrollbar-track {
+
+		}
+
+		&::-webkit-scrollbar-thumb {
+				border-left: 8px solid;
+				border-color: #7A8CA2;
+		}
+}
+
+
+//NULL BUTTONS
+%buttonNull {
+	border:0;
+	padding:0;
+	background:transparent;
+	&:focus{
+		outline: none;
+	}
+}
+
+// // Transitions
+
+// @mixin transition($transition...) {
+//   -webkit-transition: $transition;
+//        -o-transition: $transition;
+//           transition: $transition;
+// }
+// @mixin transition-property($transition-property...) {
+//   -webkit-transition-property: $transition-property;
+//           transition-property: $transition-property;
+// }
+// @mixin transition-delay($transition-delay) {
+//   -webkit-transition-delay: $transition-delay;
+//           transition-delay: $transition-delay;
+// }
+// @mixin transition-duration($transition-duration...) {
+//   -webkit-transition-duration: $transition-duration;
+//           transition-duration: $transition-duration;
+// }
+// @mixin transition-timing-function($timing-function) {
+//   -webkit-transition-timing-function: $timing-function;
+//           transition-timing-function: $timing-function;
+// }
+// @mixin transition-transform($transition...) {
+//   -webkit-transition: -webkit-transform $transition;
+//      -moz-transition: -moz-transform $transition;
+//        -o-transition: -o-transform $transition;
+//           transition: transform $transition;
+// }
+
+
+
+//MEDIA
+// @mixin bp-large {
+//   @media only screen and (max-width: 60em) {
+//     @content;
+//   }
+// }
+
+// @mixin bp-medium {
+//   @media only screen and (max-width: 40em) {
+//     @content;
+//   }
+// }
+
+// @mixin bp-small {
+//   @media only screen and (max-width: 30em) {
+//     @content;
+//   }
+// }
+//
+// USE
+// .sidebar {
+//   width: 60%;
+//   float: left;
+//   margin: 0 2% 0 0;
+//   @include bp-small {
+//     width: 100%;
+//     float: none;
+//     margin: 0;
+//   }
+// }

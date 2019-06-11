@@ -1,0 +1,90 @@
+/* BASE STYLES */
+html {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	-ms-overflow-style: scrollbar;
+}
+
+*,
+*::before,
+*::after {
+	-webkit-box-sizing: inherit;
+	        box-sizing: inherit;
+}
+html{
+	font-size: 100%;
+	height: 100%;
+	min-width: 300px;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	@include box-sizing(border-box);
+	@media screen and (max-width: 318px) {
+		overflow-x:auto;
+	}
+}
+body {
+	position: relative;
+	font-family: $font-family-main;
+	@include font-size($font-size-main);
+	line-height: $line-height-main;
+	font-weight: $font-weight-main;
+	color: $color-white;
+	background: $color-white;
+	overflow-x: hidden;
+	-webkit-overflow-scrolling: touch;
+
+	//Flexbox
+	@include flexbox();
+	flex-flow:column;
+	min-height: 100vh;
+
+	&.locked{
+		overflow: hidden;
+	}
+}
+body.menu_open{
+	overflow: hidden;
+}
+.wrapper{
+	width: 100%;
+	@include flex(1 0 auto);
+	background: $color-white;
+	overflow:hidden;
+}
+.clearfix {
+	clear: both;
+	&:after {
+		content: "";
+		display: block;
+		height: 0;
+		clear: both;
+		visibility: hidden;
+	}
+}
+img,
+video {
+	max-width: 100%;
+	height: auto;
+}
+input,
+textarea{
+	-webkit-overflow-scrolling: touch;
+}
+button{
+	&:focus{
+		outline:none;
+	}
+}
+address{
+	font-style: normal;
+}
+input:not([type=checkbox]):not([type=radio]),
+textarea,
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.container{
+	width: 100%;
+}
+/* end base styles */

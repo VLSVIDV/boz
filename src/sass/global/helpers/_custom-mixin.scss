@@ -1,0 +1,83 @@
+@mixin multiply($color) {
+	background-color: #a10310;
+	opacity: 0.85;
+	@supports (mix-blend-mode: multiply){
+		opacity: 1;
+		background-color: $color;
+		mix-blend-mode: multiply;
+	}
+}
+
+
+@mixin supportsFlexbox {
+	@supports (display: -webkit-flex) or
+	(display: -moz-flex) or
+	(display: flex) {
+		@content;
+	}
+}
+
+@mixin positionCenter {
+	top: 50%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	transform: translateY(-50%);
+}
+
+
+@mixin vw_with_fallback($font_sizes, $vw_base) {
+	$vw_context: (1280*.01) * 1px;
+	$vw_font_size: ($vw_base/$vw_context) * 1vw;
+
+	@each $list in $font_sizes {
+		$i: index($font-sizes, $list);
+		$curr_bp: nth($list, 1);
+		$curr_fallback: nth($list, 2);
+
+		@if $i == 1 {
+			@media screen and (min-width: #{$curr_bp}) {
+				font-size: $curr_fallback;
+			}
+		}
+
+		@else {
+			$use_vw: nth($list, 3);
+
+			@if $use_vw {
+				@media screen and (max-width: #{$curr_bp}) {
+					font-size: $curr_fallback;
+					font-size: $vw_font_size;
+				}
+			}
+			@else {
+				@media screen and (max-width: #{$curr_bp}) {
+					font-size: $curr_fallback;
+				}
+			}
+		}
+	}
+}
+
+
+/// Stroke font-character
+/// @param  {Integer} $stroke - Stroke width
+/// @param  {Color}   $color  - Stroke color
+/// @return {List}            - text-shadow list
+@function textBorder($stroke, $color) {
+  $shadow: ();
+  $from: $stroke*-1;
+  @for $i from $from through $stroke {
+   @for $j from $from through $stroke {
+      $shadow: append($shadow, $i*1px $j*1px 0 $color, comma);
+    }
+  }
+  @return $shadow;
+}
+/// Stroke font-character
+/// @param  {Integer} $stroke - Stroke width
+/// @param  {Color}   $color  - Stroke color
+/// @return {Style}           - text-shadow
+@mixin textBorder($stroke, $color) {
+  text-shadow: textBorder($stroke, $color);
+}
