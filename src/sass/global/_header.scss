@@ -1,5 +1,162 @@
 /* ==========================================================================
 	 HEADER
 	 =========================================================================*/
+.header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 80px;
+  width: 100%;
+  background: transparent;
+  box-shadow: -10px 0px 14px 4px rgba(0,0,0,0.2);
+  .container{
+    display: flex;
+  }
+  @include mq('tablet', 'max'){
+    min-height: 51px;
+  }
+}
+
+.nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 80px;
+  @include mq('desktop-max', 'max'){
+    justify-content: space-around;
+  }
+  @include mq('desktop', 'max'){
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-width: 300px;
+    height: 100%;
+    background: grey;
+    text-align: center;
+    background-image: radial-gradient(circle 1130px at 68.85% 74%, #08dc60 0%, rgba(54, 135, 122, 0) 100%);
+    z-index: 20;
+    transform: translateX(-100%);
+    transition: all .3s ease;  }
+}
+
+.logo{
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background: url("../images/logo.jpg") no-repeat;
+  background-size: cover;
+  width: 59px;
+  height: 109px;
+  @include mq('tablet', 'max'){
+    width: 27px;
+    height: 53px;
+  }
+}
+
+.header__list{
+  display: flex;
+  @include mq('desktop', 'max'){
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.header__link{
+  color:$color-white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  &:not(last-child){
+    margin-right: 74px;
+  }
+  @include mq('desktop', 'max'){
+    &:not(last-child){
+      display: block;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.burger{
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  transform: translateY(-50%);
+  width: 43px;
+  height: 38px;
+  background: url("../images/burger.png") no-repeat center;
+  border: none;
+  cursor: pointer;
+  @include mq('desktop', 'max'){
+    display: block;
+  }
+  @include mq('laptop', 'max'){
+    left: 20px;
+  }
+  @include mq('tablet', 'max'){
+    width: 20px;
+    height: 16px;
+    background-size: contain;
+  }
+}
+
+.close-menu{
+  display: none;
+  position: absolute;
+  top: 5px;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 21;
+  @include mq('desktop', 'max'){
+    display: flex;
+    justify-content: center;
+    position: fixed;
+
+  }
+}
+
+.close-menu__icon{
+  position: relative;
+  width: 30px;
+  height: 30px;
+  &:before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    display: block;
+    margin: 0 auto;
+    background: $color-white;
+    transform: translateY(-50%) rotate(45deg);
+  }
+  &:after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    display: block;
+    margin: 0 auto;
+    background: $color-white;
+    transform: translateY(-50%) rotate(135deg);
+  }
+}
+
+.nav.open-menu{
+  transform: translateX(0%);
+}
 
 /* end header */

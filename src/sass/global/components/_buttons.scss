@@ -88,6 +88,39 @@
 	font-size: 18px;
 }
 
+.btn_order{
+	position: absolute;
+	right: 30px;
+	top: 50%;
+	transform: translateY(-50%);
+	padding: 0 10px;
+	height: 35px;
+	max-width: 136px;
+	min-width: 136px;
+	line-height: 35px;
+	font-size: 14px;
+	border: 1px solid rgba(255, 255, 255, 0.19);	background: linear-gradient(180deg, #b4ec51 0%, #429321 100%), url("../images/icon-pen.png");
+	background-repeat: no-repeat;
+	img{
+		position: absolute;
+		right: 19px;
+		top: 7px;
+		@include mq('tablet', 'max'){
+			right: 6px;
+			top: 5px;
+		}
+	}
+	@include mq('tablet', 'max'){
+		min-width: 32px;
+		max-width: 32px;
+		height: 32px;
+		font-size: 0;
+		border: 1px solid rgba(255, 255, 255, 0.19);
+		border-radius: 18px;
+		box-shadow: 0 2px 0 rgba(37, 64, 19, 0.48), inset 0 1px 3px rgba(255, 255, 255, 0.5);
+		background-image: linear-gradient(180deg, #b4ec51 0%, #429321 100%);
+	}
+}
 /* disabled styles */
 .btn.disabled,
 .btn[disabled],

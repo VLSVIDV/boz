@@ -445,3 +445,8 @@ template {
 [hidden] {
   display: none;
 }
+.container{
+  &:after{
+    display: none !important;
+  }
+}

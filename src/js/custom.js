@@ -3,47 +3,16 @@ $(function () {
     /*==========FOR SVG ==============*/
     svg4everybody();
     /*FOR MENU*/
+
     $('.burger').click(function (e) {
         e.preventDefault();
-        $(this)
-            .find('.icon')
-            .toggleClass('menu')
-            .toggleClass('close');
+        $('#menu').addClass('open-menu');
 
-        $('#menu').toggleClass('open');
-        if ($('.header-nav').hasClass('open')) {
-            document.ontouchmove = function(e){ e.preventDefault(); }
-            $('body').css('overflow', 'hidden');
-        } else {
-            document.ontouchmove = function(e){ return true; }
-            $('body').css('overflow', 'auto');
-        }
-        $('body').toggleClass('menu_open');
-
-        $('.header-back').toggleClass('open');
     });
 
-    $('#menu').swipe({
-        swipeRight: function () {
-            $('#menu').removeClass('open');
-            $('.header-back').removeClass('open');
-            $('body').css('overflow', 'auto');
-            $('.burger').find('.icon').toggleClass('close');
-            $('.burger').find('.icon').addClass('menu');
-        }
-    });
-
-    $('.header-back').click(function (e) {
+    $('.close-menu').click(function (e) {
         e.preventDefault();
-        $(this).removeClass('open');
-        $('.burger')
-            .find('.icon')
-            .toggleClass('menu')
-            .toggleClass('close');
-
-        $('#menu').removeClass('open');
-        $('body').removeClass('menu_open');
-        $('.icon').removeClass('close');
+        $('#menu').removeClass('open-menu');
 
     });
 
