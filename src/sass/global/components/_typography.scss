@@ -57,9 +57,7 @@ a {
 	font-weight: $font-weight-main;
 	text-decoration: none;
 	&:hover{
-		@include mq('laptop') {
-			color: $color-white;
-		}
+
 	}
 }
 a[href^="mailto:"],
