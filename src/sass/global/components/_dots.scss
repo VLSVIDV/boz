@@ -1,0 +1,42 @@
+.faq {
+  &__slider {
+    .slick-dots {
+      display: flex;
+      justify-content: center;
+
+      li {
+        width: 10px;
+        height: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin: 0 1px;
+
+        &.slick-active {
+          button {
+  
+            &::before {
+              background: #7f7f7f;
+            }
+          }
+        }
+
+        button {
+          width: 7px;
+          height: 7px;
+          padding: 0;
+
+          &::before {
+            width: 7px;
+            height: 7px;
+            content: '';
+            border: 1px solid #7f7f7f;
+            border-radius: 50%;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

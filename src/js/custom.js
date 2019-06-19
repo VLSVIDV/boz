@@ -103,9 +103,22 @@ $(function () {
             }
         });
     };
-
+    
+    //slider for faq
+    var faqSlider = $('.faq__slider');
+    var faqSettings = {
+        dots: true,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+    }
+    slick_on_mobile(faqSlider, faqSettings);
+                  
 
 
 });
+
+
 
 

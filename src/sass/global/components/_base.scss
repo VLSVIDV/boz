@@ -86,5 +86,24 @@ select {
 }
 .container{
 	width: 100%;
+	padding: 15px 0;
+
+	
+	@include mq('tablet') {
+		padding: 0 27px;
+	}
+
+	@include mq('laptop') {
+		padding: 0 42px;
+	}
+
+	@include mq('desktop') {
+		padding: 0 79px;
+	}
+}
+
+p,ul,li,img,h1,h2,h3,h4,h5,h6 {
+	margin: 0;
+	padding: 0;
 }
 /* end base styles */
