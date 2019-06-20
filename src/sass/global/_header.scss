@@ -53,6 +53,7 @@
   width: 59px;
   height: 109px;
   @include mq('tablet', 'max'){
+    top: 0;
     width: 27px;
     height: 53px;
   }

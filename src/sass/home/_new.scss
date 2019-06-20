@@ -21,6 +21,9 @@
   @include mq('laptop', 'max'){
     padding: 49px 0 62px;
   }
+  @include mq('tablet', 'max'){
+    padding: 20px 0 40px 0;
+  }
 }
 
 .new__left{
@@ -54,6 +57,10 @@
     font-size: 36px;
     margin-bottom: 19px;
   }
+  @include mq('tablet', 'max'){
+    font-size: 24px;
+    line-height: 22px;
+  }
 }
 
 .new__text{
@@ -63,6 +70,10 @@
   font-size: 20px;
   font-weight: 700;
   line-height: 30px;
+  @include mq('tablet', 'max'){
+    font-size: 14px;
+    line-height: 16px;
+  }
 }
 
 .new__right{
@@ -77,6 +88,9 @@
   @include mq('laptop', 'max'){
     margin-top: 20px;
   }
+  @include mq('tablet', 'max'){
+    margin-top: 14px;
+  }
 }
 
 .new__text_grey{
@@ -84,6 +98,9 @@
   opacity: 0.6;
   @include mq('laptop', 'max'){
     margin-top: 30px;
+  }
+  @include mq('tablet', 'max'){
+    margin-top: 25px;
   }
 }
 
@@ -98,6 +115,9 @@
   @include mq('laptop', 'max'){
     margin-top: 23px;
   }
+  @include mq('tablet', 'max'){
+    font-size: 14px;
+  }
 }
 
 .btn_end{
@@ -105,6 +125,10 @@
   @include mq('desktop', 'max'){
     display: block;
     margin-top: 40px;
+  }
+  @include mq('tablet', 'max'){
+    margin: 0 auto;
+    margin-top: 20px;
   }
 }
 /* end header */

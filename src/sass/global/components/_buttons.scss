@@ -62,6 +62,14 @@
 	color:$color-grey;
 	border: 1px solid $color-grey;
 	max-width: 368px;
+	@include mq	('tablet', 'max'){
+		max-width: 250px;
+		height: 48px;
+		font-size: 14px;
+		text-align: right;
+		padding-right: 64px;
+		line-height: 48px;
+	}
 }
 
 .btn_secondary-1{

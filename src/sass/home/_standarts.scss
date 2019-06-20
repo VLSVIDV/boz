@@ -1,0 +1,45 @@
+/*==========================================================================
+	 standarts
+	 ===========================================================================*/
+
+.standarts{
+  position: relative;
+  min-height: 1408px;
+  background: url("../images/bg-stand.jpg") no-repeat;
+  background-size: cover;
+  &:before{
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #7ed321;
+    opacity: 0.76;
+  }
+  .container{
+    display: flex;
+  }
+}
+
+.standarts__text{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.standarts__title{
+  font-family: $font-family-th;
+  font-size: 52px;
+  color: $color-white;
+  text-align: left;
+}
+
+.standarts__item{
+  display: flex;
+}
+
+.standarts__desc{
+  margin-top: auto;
+}
+/* end standarts */
