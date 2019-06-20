@@ -7,6 +7,7 @@
   min-height: 1408px;
   background: url("../images/bg-stand.jpg") no-repeat;
   background-size: cover;
+  overflow: hidden;
   &:before{
     content: '';
     position: absolute;
@@ -23,12 +24,14 @@
 }
 
 .standarts__text{
+  margin-top: 96px;
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 51%;
 }
 
 .standarts__title{
+  margin-bottom: 66px;
   font-family: $font-family-th;
   font-size: 52px;
   color: $color-white;
@@ -37,9 +40,54 @@
 
 .standarts__item{
   display: flex;
+  margin-top: 43px;
 }
 
 .standarts__desc{
   margin-top: auto;
+  margin-left: -27px;
+  p{
+    font-family: $font-family-bold;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  span{
+    line-height: 25px;
+  }
+}
+
+.standarts__imgs{
+  width: 49%;
+  display: flex;
+  flex-direction: column;
+  img{
+    &:nth-child(2){
+      margin-top: -140px;
+    }
+    &:nth-child(3){
+      margin-top: -70px;
+    }
+  }
+}
+
+.standarts__num{
+  width: 414px;
+}
+
+.standarts-email{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  right: 0;
+  bottom: 93px;
+  margin: 0 auto;
+  background-color: rgba(10, 200, 98, 0.9);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  min-height: 270px;
+  max-width: 1569px;
 }
 /* end standarts */
