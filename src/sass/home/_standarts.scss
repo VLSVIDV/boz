@@ -21,6 +21,15 @@
   .container{
     display: flex;
   }
+  @include mq('desktop', 'max'){
+    min-height: 1118px;
+  }
+  @include mq('laptop', 'max'){
+    min-height: 678px;
+  }
+  @include mq('tablet', 'max'){
+    min-height: 708px;
+  }
 }
 
 .standarts__text{
@@ -28,6 +37,18 @@
   display: flex;
   flex-direction: column;
   width: 51%;
+  @include mq('desktop', 'max'){
+    margin-top: 76px;
+    width: 58%;
+  }
+  @include mq('laptop', 'max'){
+    margin-top: 26px;
+    width: 73%;
+  }
+  @include mq('tablet', 'max'){
+    margin-top: 12px;
+    width: 100%;
+  }
 }
 
 .standarts__title{
@@ -36,11 +57,36 @@
   font-size: 52px;
   color: $color-white;
   text-align: left;
+  @include mq('desktop-max', 'max'){
+    margin-bottom: 0;
+  }
+  @include mq('desktop', 'max'){
+    font-size: 48px;
+  }
+  @include mq('laptop', 'max'){
+    padding-left: 42px;
+    font-size: 36px;
+    line-height: 38px;
+  }
+  @include mq('tablet', 'max'){
+    padding-left: 19px;
+    font-size: 24px;
+    line-height: 22px;
+  }
 }
 
 .standarts__item{
   display: flex;
   margin-top: 43px;
+  @include mq('desktop-max', 'max'){
+    margin-top: 52px;
+  }
+  @include mq('desktop', 'max'){
+    margin-top: 20px;
+  }
+  @include mq('laptop', 'max'){
+    margin-top: 13px;
+  }
 }
 
 .standarts__desc{
@@ -50,9 +96,30 @@
     font-family: $font-family-bold;
     margin-bottom: 10px;
     font-size: 20px;
+    @include mq('laptop', 'max'){
+      font-size: 18px;
+    }
+    @include mq('tablet', 'max'){
+      font-size: 16px;
+    }
   }
   span{
     line-height: 25px;
+    @include mq('laptop', 'max'){
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+  @include mq('desktop', 'max'){
+    margin-left: -92px;
+  }
+  @include mq('laptop', 'max'){
+    margin-top: 18px;
+    margin-left: -52px;
+  }
+  @include mq('tablet', 'max'){
+    margin-left: 3px;
+    margin-top: 0;
   }
 }
 
@@ -63,15 +130,46 @@
   img{
     &:nth-child(2){
       margin-top: -140px;
+      @include mq('desktop-max', 'max'){
+        margin-top: -80px;
+      }
     }
     &:nth-child(3){
       margin-top: -70px;
+      @include mq('desktop-max', 'max'){
+        margin-top: 70px;
+      }
+      @include mq('desktop', 'max'){
+        margin-top: 211px;
+      }
+      @include mq('laptop', 'max'){
+        display: none;
+      }
     }
+  }
+  @include mq('laptop', 'max'){
+    width: 28%;
+  }
+  @include mq('tablet', 'max'){
+    display: none;
   }
 }
 
 .standarts__num{
   width: 414px;
+  @include mq('desktop-max', 'max'){
+    width: 596px;
+  }
+  @include mq('desktop', 'max'){
+    width: 756px;
+  }
+  @include mq('laptop', 'max'){
+    width: 156px;
+  }
+  @include mq('tablet', 'max'){
+    width: 80px;
+    height: 43px;
+  }
 }
 
 .standarts-email{
@@ -89,5 +187,128 @@
   border-radius: 8px;
   min-height: 270px;
   max-width: 1569px;
+  @include mq('desktop-max', 'max'){
+    padding: 0 104px;
+    max-width: 1279px;
+  }
+  @include mq('desktop', 'max'){
+    flex-direction: column;
+    padding: 0 79px;
+    bottom: 92px;
+    max-width: 941px;
+    min-height: 215px;
+  }
+  @include mq('laptop', 'max'){
+    bottom: 42px;
+    max-width: 631px;
+  }
+  @include mq('tablet', 'max'){
+    bottom: 42px;
+    padding: 15px 21px 15px 21px;
+    max-width: 276px;
+  }
+}
+
+.standarts-email__text{
+  width: 29%;
+  p{
+    font-family: $font-family-bold;
+    font-size: 32px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.3);
+    @include mq('laptop', 'max'){
+      font-size: 20px;
+    }
+  }
+  span{
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    opacity: 0.8;
+    @include mq('laptop', 'max'){
+      margin-top: 12px;
+      font-size: 14px;
+    }
+  }
+  @include mq('desktop-max', 'max'){
+    width: 36%;
+  }
+  @include mq('desktop', 'max'){
+    width: 100%;
+  }
+}
+
+.standarts-email__form{
+  display: flex;
+  justify-content: space-around;
+  margin-left: 70px;
+  @include mq('desktop-max', 'max'){
+    width: 60%;
+  }
+  @include mq('desktop', 'max'){
+    margin-top: 11px;
+    width: 100%;
+    margin-left: 0;
+  }
+  @include mq('tablet', 'max'){
+    flex-direction: column;
+  }
+}
+.standarts-email__input{
+  padding-left: 60px;
+  min-width: 530px;
+  height: 60px;
+  background: url("../images/mail.png") no-repeat;
+  background-position: 30px;
+  box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.16);
+  border-radius: 30px 0 0 30px;
+  border: 2px solid rgba(223, 222, 222, 0.49);
+  background-color: #ffffff;
+  outline: none;
+  &::placeholder{
+    opacity: 0.8;
+    color: #9b9b9b;
+    font-size: 16px;
+  }
+  @include mq('desktop-max', 'max'){
+    margin-left: auto;
+    min-width: 380px;
+  }
+  @include mq('desktop', 'max'){
+    margin-left: 0;
+    min-width: 542px;
+  }
+  @include mq('laptop', 'max'){
+    min-width: 322px;
+  }
+  @include mq('tablet', 'max'){
+    padding-left: 40px;
+    min-width: 229px;
+    border-radius: 30px;
+    height: 48px;
+    background-position: 11px;
+  }
+}
+
+.standarts-email__btn{
+  border-radius: 0 30px 30px 0;
+  height: 60px;
+  min-width: 236px;
+  font-size: 18px;
+  box-shadow: 0 2px 0 rgba(37, 64, 19, 0.48), inset 0 1px 3px rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.19);
+  background-image: linear-gradient(180deg, #b4ec51 0%, #429321 100%);
+  color:$color-white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.3);
+  letter-spacing: 1.16px;
+  cursor: pointer;
+  @include mq('laptop', 'max'){
+    min-width: 176px;
+  }
+  @include mq('tablet', 'max'){
+    margin-top: 20px;
+    min-width: 229px;
+    border-radius: 30px;
+    height: 48px;
+  }
 }
 /* end standarts */
