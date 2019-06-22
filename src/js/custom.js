@@ -117,6 +117,48 @@ $(function () {
                   
 
 
+    
+
+    //map filter
+    var mapFilterButtons = $('.map__filter button');
+    $(mapFilterButtons).on('click', function() {
+        $(mapFilterButtons).removeClass('active');
+        $(this).addClass('active');
+        var city = $(this).data('city');
+
+        $('.map .card-map').addClass('hidden');
+        if (city == 'all') {
+            $('.map .card-map').removeClass('hidden');
+        } else {
+            $('.map #' + city).removeClass('hidden');
+        }
+    });
+
+    //map popup
+    var mapCards = $('.map .card-map');
+
+    $(mapCards).on('click', function() {
+        $(mapCards).removeClass('opened');
+        $(this).addClass('opened');
+    });
+
+    $('.map').on('click', function(e) {
+        
+        if (
+            $(e.target).hasClass('card-map__pin') || 
+            $(e.target).prop('tagName') == 'svg' || 
+            $(e.target).prop('tagName') == 'use' || 
+            $(e.target).prop('tagName') == 'P' || 
+            $(e.target).prop('tagName') == 'SPAN' ||
+            $(e.target).hasClass('card-map__content') ||
+            $(e.target).prop('tagName') == 'IMG'
+            ) 
+        {
+            return;
+        }
+        $(mapCards).removeClass('opened');
+    });
+
 });
 
 
