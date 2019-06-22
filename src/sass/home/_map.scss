@@ -1,0 +1,10 @@
+.map {
+  display: none;
+  background: url('../images/map__bg.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @include mq('laptop') {
+    display: block;
+  }
+}
