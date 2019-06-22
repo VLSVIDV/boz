@@ -159,6 +159,33 @@ $(function () {
         $(mapCards).removeClass('opened');
     });
 
+
+    //product slider
+
+    
+
+    if ($(window).width() < 768) {
+
+        $('.products__content').slick({
+            dots: true,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+        });
+    }
+
+    $slick_slider_products = $('.products__content');
+    settings_slider_products = {
+        dots: true,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+    }
+    slick_on_mobile( $slick_slider_products, settings_slider_products);
+          
+
 });
 
 
