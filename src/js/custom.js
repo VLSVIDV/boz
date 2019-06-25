@@ -125,6 +125,21 @@ $(function () {
         slidesToScroll: 1,
     }
     slick_on_mobile(firstSlider, firstSettings);
+
+    //first-screen toggler
+    var tumlberList =$('.first__tumble');
+    var itemList =$('.first__item');
+
+    $(tumlberList).on('click', function() {
+        var color = $(this).data('color');
+        $(itemList).removeClass('active');
+        $(tumlberList).removeClass('active brown orange green');
+        $(tumlberList).addClass(color);
+
+        $(this).addClass('active');
+        $('#first-item-' + color).addClass('active');
+        
+    });
     
 
     //map filter
