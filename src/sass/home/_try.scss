@@ -1,0 +1,116 @@
+/*==========================================================================
+	 try
+	 ===========================================================================*/
+
+.try{
+  padding: 115px 0 172px 0;
+  background: url("../images/try-bg.jpg") no-repeat;
+  background-size: cover;
+  @include mq('desktop', 'max'){
+    padding: 35px 0 50px 0;
+  }
+  @include mq('tablet', 'max'){
+    padding: 20px 10px 40px 10px;
+  }
+}
+
+.try__title{
+  font-family: $font-family-th;
+  @include mq('desktop', 'max'){
+    font-size: 48px;
+  }
+  @include mq('laptop', 'max'){
+    font-size: 36px;
+  }
+  @include mq('tablet', 'max'){
+    font-size: 24px;
+    line-height: 22px;
+  }
+}
+
+.try__inner{
+  margin-top: 90px;
+  display: flex;
+  justify-content: space-around;
+  @include mq('desktop', 'max'){
+    margin-top: 50px;
+  }
+  @include mq('tablet', 'max'){
+    flex-direction: column;
+    align-items: center;
+  }
+  @include mq('tablet', 'max'){
+    margin-top: 26px;
+  }
+}
+
+.try__item{
+  display: flex;
+  flex-direction: column;
+  max-width: 348px;
+  text-align: center;
+  @include mq('desktop', 'max'){
+    max-width: 270px;
+  }
+  @include mq('laptop', 'max'){
+    max-width: 200px;
+  }
+  @include mq('tablet', 'max'){
+    align-items: center;
+    max-width: 90%;
+    &:not(:first-child){
+      margin-top: 40px;
+    }
+  }
+  p{
+    display: inline-block;
+    font-family: $font-family-th;
+    text-transform: uppercase;
+    font-size: 32px;
+    @include mq('desktop', 'max'){
+      font-size: 26px;
+    }
+    @include mq('laptop', 'max'){
+      font-size: 18px;
+    }
+    @include mq('tablet', 'max'){
+      font-size: 16px;
+    }
+  }
+  span{
+    display: inline-block;
+    font-family: $font-family-bold;
+    font-size: 22px;
+    letter-spacing: 1px;
+    line-height: 24px;
+    opacity: 0.8;
+    max-height: 71px;
+    overflow: hidden;
+    @include mq('desktop', 'max'){
+      font-size: 18px;
+      line-height: 20px;
+      max-height: 80px;
+    }
+    @include mq('laptop', 'max'){
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+}
+
+.try__img{
+  margin: 27px 0 43px 0;
+  @include mq('desktop', 'max'){
+    margin: 20px 0 36px 0;
+  }
+  @include mq('laptop', 'max'){
+    margin: 20px 0 26px 0;
+  }
+  @include mq('tablet', 'max'){
+    margin: 10px 0 19px 0;
+    max-width: 150px;
+    max-height: 112px;
+  }
+}
+
+/* end try */
