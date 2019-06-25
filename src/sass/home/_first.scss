@@ -2,8 +2,320 @@
 	 FIRST
 	 ===========================================================================*/
 .first{
-  min-height: 1084px;
-  background: url("../images/bg-head.jpg") no-repeat;
-  background-size: cover;
+  position: relative;
+
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__social {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    padding: 0 20px;
+    height: 50px;
+    transform: rotate(-90deg);
+    transform-origin: 25px 25px;
+
+    a {
+      color: #ffffff;
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-right: 40px;
+      opacity: .7;
+      transition: 300ms ease all;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    @include mq('tablet') {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__scroll-btn {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    padding: 0 25px;
+    height: 100px;
+    transform: rotate(90deg);
+    transform-origin: calc(100% - 50px) 50px;
+
+    svg {
+      width: 18px;
+      height: 31px;
+      fill: none;
+      stroke: #ffffff;
+      transform: rotate(-90deg);
+      margin-right: 30px;
+    }
+
+    @include mq('laptop') {
+      display: flex;
+      align-items: center;
+      color: #ffffff;
+      opacity: .7;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      transition: 300ms ease all;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__item {
+    padding: 70px 20px 45px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    &_green {
+      background-image: url('../images/bg-green.jpg');
+    }
+
+    &_brown {
+      background-image: url('../images/bg-brown.jpg');
+    }
+
+    &_orange {
+        background-image: url('../images/bg-orange.jpg');
+    }
+
+    @include mq('tablet') {
+      position: relative;
+      padding: 150px 80px 80px;
+      height: 700px;
+    }
+
+    @include mq('laptop') {
+      position: relative;
+      padding: 200px 40px 120px;
+      height: 700px;
+    }
+
+    @include mq('desktop') {
+      position: relative;
+      padding: 270px 80px 160px;
+      height: 950px;
+    }
+  }
+
+  &__item-wrapper {
+    max-width: 320px;
+    margin: auto;
+
+    @include mq('tablet') {
+      width: 50%;
+      margin-right: auto;
+      margin-left: calc(100%/2 - 307px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+    }
+
+    @include mq('laptop') {
+      max-width: 463px;
+      width: 50%;
+      margin-right: auto;
+      margin-left: calc(100%/2 - 463px);
+    }
+
+    @include mq('desktop') {
+      max-width: 650px;
+      width: 50%;
+      margin-right: auto;
+      margin-left: calc(100%/2 - 650px);
+    }
+  }
+
+  &__title {
+    color: #ffffff;
+    font-family: "ProxiLt";
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 1;
+    margin-bottom: 10px;
+
+    b {
+      font-family: "ProxiReg";
+      font-weight: 700;
+    }
+
+    @include mq('tablet') {
+      font-size: 36px;
+      line-height: 38px;
+      margin-bottom: 30px;
+    }
+
+    @include mq('laptop') {
+      font-size: 43px;
+      line-height: 50px;
+    }
+
+    @include mq('desktop') {
+      font-size: 57px;
+      line-height: 60px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__description {
+    opacity: 0.8;
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 14px;
+
+    @include mq('tablet') {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 18px;
+      margin-bottom: 40px;
+    }
+
+    @include mq('laptop') {
+      font-size: 18px;
+      line-height: 28px;
+      margin-bottom: 45px;
+    }
+
+    @include mq('desktop') {
+      font-size: 24px;
+      line-height: 34px;
+      margin-bottom: 65px;
+    }
+  }
+
+  &__pic {
+    width: 100%;
+    max-width: 300px;
+    transform: translateX(10%);
+    margin: auto;
+    margin-bottom: -15%;
+
+    @include mq('tablet') {
+      max-width: 500px;
+      width: 60%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-35%);
+    }
+
+    @include mq('laptop') {
+      max-width: 600px;
+    }
+
+    @include mq('desktop') {
+      max-width: 800px;
+    }
+  }
+
+  &__more {
+    margin: auto;
+    width: 250px;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+    min-height: 48px;
+    border-radius: 30px;
+    border: 1px solid #ffffff;
+    padding: 0 25px;
+
+    @include mq('tablet') {
+      margin: 0;
+    }
+
+    @include mq('laptop') {
+      height: 60px;
+      min-height: 60px;
+      width: 370px;
+      font-size: 16px;
+      line-height: 16px;
+      padding: 0 50px;
+    }
+
+    svg {
+      width: 17px;
+      height: 12px;
+    }
+  }
+
+  &__tumbler {
+    display: none;
+
+    @include mq('tablet') {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #1c8f7d;
+    }
+  }
+
+  &__tumble {
+    position: relative;
+    padding: 50px 0;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    &.active {
+      &::before {
+        background: #00ff53;
+        content: '';
+        width: 80%;
+        height: 15px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        filter: blur(20px);
+        border-radius: 50%;
+      }
+    }
+
+    img {
+      width: 128px;
+      height: 134px;
+      margin-bottom: 24px;
+      display: block;
+    }
+
+    p {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 28px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    
+  }
 }
 /* end first */

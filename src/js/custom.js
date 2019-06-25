@@ -115,8 +115,16 @@ $(function () {
     }
     slick_on_mobile(faqSlider, faqSettings);
                   
-
-
+    //first-screen slider
+    var firstSlider = $('.first__slider');
+    var firstSettings = {
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+    }
+    slick_on_mobile(firstSlider, firstSettings);
     
 
     //map filter
@@ -184,8 +192,6 @@ $(function () {
         slidesToScroll: 1,
     }
     slick_on_mobile( $slick_slider_products, settings_slider_products);
-          
-
 });
 
 
