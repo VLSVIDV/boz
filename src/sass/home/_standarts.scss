@@ -19,6 +19,7 @@
     opacity: 0.76;
   }
   .container{
+    padding-top: 15px;
     display: flex;
   }
   @include mq('desktop', 'max'){

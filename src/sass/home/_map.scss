@@ -1,0 +1,142 @@
+.map {
+  position: relative;
+  display: none;
+  background-image: url('../images/map_bg-3.jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 1920px 1001px;
+  padding-top: 70px;
+  height: 1000px;
+
+ 
+
+  @include mq('laptop') {
+    display: block;
+  }
+
+  @include mq('desktop-max') {
+    background-size: 100%;
+  }
+
+
+  h2 {
+    color: #ffffff;
+    font-family: "ProxiTh";
+    font-size: 48px;
+    line-height: 50px;
+    margin-bottom: 43px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+
+    button {
+      cursor: pointer;
+      margin-right: 13px;
+      font-size: 16px;
+      line-height: 19px;
+      color: #ffffff;
+      background: none;
+      border-radius: 100px;
+      padding: 12px 20px;
+      border: 1px solid #ffffff;
+      min-width: 123px;
+      transition: all 300ms ease;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      &.active {
+        color: #3a9687;
+        border: 1px solid #308679;
+        background-color: #ffffff;
+      }
+    }
+  }
+
+  &__pic {
+    position: absolute;
+    top: 161px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/map.svg');
+    background-repeat: no-repeat;
+    background-position: calc(50% - 80px) top;    
+    background-size: 1461px 825px;
+    overflow: visible;
+
+    div {
+      position: absolute;
+      top: 161px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      transform: translateX(-80px);
+      background-image: url('../images/map.svg');
+      background-repeat: no-repeat;
+      background-position: center top;    
+      background-size: 1461px 825px;
+      overflow: visible;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/map_bg-2.png');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 1920px 1001px;
+
+    @include mq('desktop-max') {
+      background-size: 100%;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 1024px;
+    height: 1000px;
+    margin: auto;
+  }
+
+  .card-map {
+    position: absolute;
+  }
+
+
+  #irk {
+    left: 531px;
+    top: 810px;
+  }
+  #nsk{
+    left: 271px;
+    top: 720px;
+  }
+  #omsk {
+    left: 171px;
+    top: 680px;
+  }
+  #kem {
+    left: 311px;
+    top: 710px;
+  }
+}

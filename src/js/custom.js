@@ -115,8 +115,98 @@ $(function () {
     }
     slick_on_mobile(faqSlider, faqSettings);
                   
+    //first-screen slider
+    var firstSlider = $('.first__slider');
+    var firstSettings = {
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+    }
+    slick_on_mobile(firstSlider, firstSettings);
+
+    //first-screen toggler
+    var tumlberList =$('.first__tumble');
+    var itemList =$('.first__item');
+
+    $(tumlberList).on('click', function() {
+        var color = $(this).data('color');
+        $(itemList).removeClass('active');
+        $(tumlberList).removeClass('active brown orange green');
+        $(tumlberList).addClass(color);
+
+        $(this).addClass('active');
+        $('#first-item-' + color).addClass('active');
+        
+    });
+    
+
+    //map filter
+    var mapFilterButtons = $('.map__filter button');
+    $(mapFilterButtons).on('click', function() {
+        $(mapFilterButtons).removeClass('active');
+        $(this).addClass('active');
+        var city = $(this).data('city');
+
+        $('.map .card-map').addClass('hidden');
+        if (city == 'all') {
+            $('.map .card-map').removeClass('hidden');
+        } else {
+            $('.map #' + city).removeClass('hidden');
+        }
+    });
+
+    //map popup
+    var mapCards = $('.map .card-map');
+
+    $(mapCards).on('click', function() {
+        $(mapCards).removeClass('opened');
+        $(this).addClass('opened');
+    });
+
+    $('.map').on('click', function(e) {
+        
+        if (
+            $(e.target).hasClass('card-map__pin') || 
+            $(e.target).prop('tagName') == 'svg' || 
+            $(e.target).prop('tagName') == 'use' || 
+            $(e.target).prop('tagName') == 'P' || 
+            $(e.target).prop('tagName') == 'SPAN' ||
+            $(e.target).hasClass('card-map__content') ||
+            $(e.target).prop('tagName') == 'IMG'
+            ) 
+        {
+            return;
+        }
+        $(mapCards).removeClass('opened');
+    });
 
 
+    //product slider
+
+    
+
+    if ($(window).width() < 768) {
+
+        $('.products__content').slick({
+            dots: true,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+        });
+    }
+
+    $slick_slider_products = $('.products__content');
+    settings_slider_products = {
+        dots: true,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+    }
+    slick_on_mobile( $slick_slider_products, settings_slider_products);
 });
 
 

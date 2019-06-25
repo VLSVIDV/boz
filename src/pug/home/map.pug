@@ -1,0 +1,57 @@
+section.map
+  .map__pic
+  .map__bg
+  .container
+    h2 Где купить продукцию BOZ
+    .map__filter
+      button.active(data-city="all")
+        span Все города
+      button(data-city="nsk")
+        span Новосибирск
+      button(data-city="omsk")
+        span Омск
+      button(data-city="kem")
+        span Кемерово
+      button(data-city="irk")
+        span Иркутск
+  .map__content
+    .card-map#nsk
+      div.card-map__content
+        p Сеть магазинов «Светофор»
+        img(src="images/shop.png", alt="shop")
+        div
+          span 958 Rosario Plains
+          span 6328 Jena Springs Suite 176
+          span 1 (999) 111-2300
+      .card-map__pin
+        +icon('map-marker-alt')
+    .card-map#omsk
+      div.card-map__content
+        p Сеть магазинов «Светофор»
+        img(src="images/shop.png", alt="shop")
+        div
+          span 958 Rosario Plains
+          span 6328 Jena Springs Suite 176
+          span 1 (999) 111-2300
+      .card-map__pin
+        +icon('map-marker-alt')
+    .card-map#kem
+      div.card-map__content
+        p Сеть магазинов «Светофор»
+        img(src="images/shop.png", alt="shop")
+        div
+          span 958 Rosario Plains
+          span 6328 Jena Springs Suite 176
+          span 1 (999) 111-2300
+      .card-map__pin
+        +icon('map-marker-alt')
+    .card-map#irk
+      div.card-map__content
+        p Сеть магазинов «Светофор»
+        img(src="images/shop.png", alt="shop")
+        div
+          span 958 Rosario Plains
+          span 6328 Jena Springs Suite 176
+          span 1 (999) 111-2300
+      .card-map__pin
+        +icon('map-marker-alt')

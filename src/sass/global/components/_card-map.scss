@@ -1,0 +1,90 @@
+.card-map {
+  position: relative;
+  
+  width: 25px;
+  height: 34px;
+
+  &.hidden {
+    display: none;
+  }
+
+    
+  &__content {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    width: 360px;
+    height: 228px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 35px 30px 40px;
+    border-radius: 8px;
+    background-color: rgba(10, 200, 98, 0.9);
+    transition: all 300ms ease;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-top: 2px solid transparent;
+      border-left: 2px solid transparent;
+      background-color: rgba(10, 200, 98, .95);
+      bottom: 0;
+      left: 44px;
+      transform: rotate(45deg) translateY(13px);
+    }
+  }
+
+  &.opened {
+
+    .card-map__content {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-30px ,calc(-100% - 20px));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: stretch;
+      align-content: space-between;
+
+      p {
+        width: 100%;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 28px;
+      }
+
+      img {
+        width: 70px;
+        height: 70px;
+      }
+      div {
+        height: 70px;
+        width: 210px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &__pin {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    
+    &:hover {
+      svg {
+        fill: #266d61;
+      }
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      transition: ease 300ms all;
+    }
+  }
+}
