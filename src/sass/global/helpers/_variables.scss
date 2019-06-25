@@ -4,9 +4,9 @@
 //
 
 //NEW INCLUDE FONTS FROM MIXIN
-@include font-face('ProxiReg', '../fonts/ProximaNovaReg', 400, normal, eot woff ttf woff2);
-@include font-face('ProxiBold', '../fonts/ProximaNovaBold', 700, normal, eot woff ttf woff2);
-@include font-face('ProxiTh', '../fonts/ProximaNova-Extrabld', 700, normal, eot woff ttf woff2);
+@include font-face('ProxiReg', '../fonts/ProximaNovaReg', 400, normal, woff2);
+@include font-face('ProxiBold', '../fonts/ProximaNovaBold', 700, normal, woff2);
+@include font-face('ProxiTh', '../fonts/ProximaNova-Extrabld', 700, normal, woff2);
 
 
 $font-family-main: 'ProxiReg', "Times New Roman", serif;
