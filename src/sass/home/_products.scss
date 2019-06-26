@@ -14,6 +14,7 @@
   }
 
   .container {
+
     @include mq('tablet') {
       max-width: 630px;
     }
@@ -98,6 +99,23 @@
   }
 
   &__content {
+    @include mq('tablet') {
+      max-width: 630px;
+      margin: auto;
+    }
+
+    @include mq('laptop') {
+      padding: 0;
+      max-width: 940px;
+    }
+
+    @include mq('desktop') {
+      max-width: 1280px;
+    }
+
+    @include mq('desktop-max') {
+      max-width: 1580px;
+    }
     margin-bottom: 60px!important;
 
     @include mq('laptop') { 

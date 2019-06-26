@@ -95,21 +95,25 @@
     }
 
     @include mq('desktop') {
-      max-height: 950px;
-      min-height: 950px;
+      max-height: 850px;
+      min-height: 850px;
     }
   }
 
   &__item {
-    z-index: 0;
+    height: 600px;
     padding: 70px 20px 45px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
-    opacity: 1;
-    filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     @include mq('tablet') {
+      z-index: 0;
+      opacity: 1;
+      filter: blur(10px);
       position: absolute;
       top: 0;
       left: 0;
@@ -130,7 +134,7 @@
     @include mq('desktop') {
       padding: 270px 80px 160px;
       max-height: 950px;
-      height: 950px;
+      height: 850px;
     }
 
     @include mq('tablet') {
@@ -160,6 +164,9 @@
   &__item-wrapper {
     max-width: 320px;
     margin: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 
     @include mq('tablet') {
       width: 50%;
@@ -270,6 +277,8 @@
 
   &__more {
     margin: auto;
+    margin-top: auto;
+    margin-bottom: 0;
     width: 250px;
     color: #ffffff;
     font-size: 14px;
