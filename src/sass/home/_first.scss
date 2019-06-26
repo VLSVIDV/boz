@@ -276,6 +276,7 @@
   }
 
   &__more {
+    z-index: 2;
     margin: auto;
     margin-top: auto;
     margin-bottom: 0;
@@ -313,6 +314,8 @@
   }
 
   &__tumbler {
+    z-index: 2;
+    position: relative;
     display: none;
 
     @include mq('tablet') {
