@@ -1,0 +1,134 @@
+.product-page {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: url('../images/product-page-bg.jpg');
+  // display: none;
+  overflow-y: scroll;
+
+  &__wrapper {
+
+  }
+
+  &__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px;
+    width: 60px;
+    height: 60px;
+
+    span {
+      font-size: 0;
+      height: 0;
+      position: absolute;
+      visibility: hidden;
+    }
+    
+    svg {
+      fill: none;
+      stroke: #fff;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__slider {
+
+  }
+
+  &__slider-container {
+
+  }
+
+  &__item {
+
+  }
+
+  &__pic {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__content {
+    padding: 22px;
+    padding-bottom: 40px;
+    max-width: 320px;
+    margin: auto;
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 40px;
+    font-family: 'ProxiTh';
+    color: #4a4a4a;
+  }
+
+  &__art {
+    color: #4a4a4a;
+    font-size: 16px;
+    line-height: 25px;
+    margin-bottom: 22px;
+  }
+
+  &__toggler {
+    margin-bottom: 25px;
+  }
+
+  &__text {
+    opacity: 0.8;
+    color: #4a4a4a;
+    font-size: 13px;
+    line-height: 18px;
+    margin-bottom: 25px;
+  }
+
+  &__table {
+    color: #000000;
+    font-size: 16px;
+    line-height: 19px;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #9b9b9b;
+      padding: 10px 0;
+
+      &:first-of-type {
+        border-top: 1px solid #9b9b9b;
+      }
+    }
+  }
+
+  button.btn.btn_green {
+    margin: auto;
+    font-size: 14px;
+    margin-top: 33px;
+    padding: 0 35px;
+    width: 100%;
+    max-width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+
+    @include mq('tablet') {
+      max-width: 350px;
+      font-size: 18px;
+      letter-spacing: 1.16px;
+      line-height: 19px;
+      justify-content: center;
+
+      span {
+        margin-right: 22px;
+      }
+    }
+  }
+}
