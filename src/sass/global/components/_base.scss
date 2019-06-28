@@ -40,6 +40,13 @@ body {
 	&.locked{
 		overflow: hidden;
 	}
+
+	&.blocked {
+    overflow: hidden;
+    background: #eee;
+    height: 100%;
+  }
+
 }
 body.menu_open{
 	overflow: hidden;

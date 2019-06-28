@@ -6,20 +6,36 @@
   left: 0;
   z-index: 10;
   background: url('../images/product-page-bg.jpg');
-  // display: none;
+  display: none;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+
+
+  &.showed {
+    display: block;
+  }
 
   &__wrapper {
 
   }
 
   &__close {
+    background: none;
+    border: none;
     position: absolute;
     right: 0;
     top: 0;
     padding: 10px;
     width: 60px;
     height: 60px;
+    z-index: 3;
+
+    @include mq('tablet') {
+      right: 20px;
+      top: 20px;
+      width: 80px;
+      height: 80px;
+    }
 
     span {
       font-size: 0;
@@ -37,22 +53,108 @@
   }
 
   &__slider {
-
+    position: relative;
   }
 
   &__slider-container {
 
   }
 
-  &__item {
+  &__control {
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
 
+    button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      border: none;
+      background: none;
+      width: 60px;
+      height: 60px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+
+      &.prev {
+        left: calc((40% - 450px)/4 - 30px);
+
+
+        @include mq('desktop-max') {
+          left: calc((40% - 500px)/4 - 50px);
+        }
+      }
+
+      &.next {
+        right: calc((40% - 450px)/4 - 30px);
+        transform: scaleX(-1) translateY(-50%);
+
+        @include mq('desktop-max') {
+          right: calc((40% - 500px)/4 - 50px);
+        }
+      }
+
+      svg {
+        fill: #9b9b9b;
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    @include mq('desktop') {
+      display: block;
+    }
+  }
+
+  &__item {
+    @include mq('desktop') {
+      display: flex;
+      height: 100vh;
+      min-height: 600px;
+    }
   }
 
   &__pic {
     width: 100%;
+    position: relative;
+    
+    @include mq('tablet') {
+      max-height: 467px;
+      padding-top: 40%;
+    }
+
+    @include mq('desktop') {
+      padding: 0;
+      width: 60%;
+      max-height: initial;
+    }
+
+    @include mq('desktop-max') {
+      padding: 0;
+      width: 65%;
+      max-height: initial;
+    }
 
     img {
+      object-fit: cover;
+      object-position: center;
       width: 100%;
+      display: block;
+      
+      @include mq('tablet') {
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      @include mq('desktop') {
+        position: relative;
+      }
     }
   }
 
@@ -61,6 +163,22 @@
     padding-bottom: 40px;
     max-width: 320px;
     margin: auto;
+
+    @include mq('tablet') {
+      max-width: 500px;
+      padding: 55px 0;
+    }
+
+    @include mq('desktop') {
+      max-width: 450px;
+      padding: 0;
+      width: 40%;
+      order: -1;
+    }
+
+    @include mq('desktop-max') {
+      max-width: 500px;
+    }
   }
 
   &__title {
@@ -68,6 +186,12 @@
     line-height: 40px;
     font-family: 'ProxiTh';
     color: #4a4a4a;
+
+    @include mq('tablet') {
+      font-size: 36px;
+      line-height: 40px;
+      margin-bottom: 10px;
+    }
   }
 
   &__art {
@@ -75,6 +199,10 @@
     font-size: 16px;
     line-height: 25px;
     margin-bottom: 22px;
+
+    @include mq('desktop-max') {
+      margin-bottom: 42px;
+    }
   }
 
   &__toggler {
@@ -82,6 +210,10 @@
     max-height: 42px;
     overflow: visible;
     z-index: 1;
+
+    @include mq('desktop-max') {
+      margin-bottom: 42px;
+    }
   }
 
   &__toggler-wrapper {
@@ -93,6 +225,13 @@
     position: relative;
     z-index: 2;
 
+    @include mq('tablet') {
+      background: none;
+      border: none;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
     div {
       width: 50px;
       height: 42px;
@@ -103,6 +242,10 @@
       align-items: center;
       justify-content: center;
 
+      @include mq('tablet') {
+        display: none;
+      }
+
       svg {
         fill: #6d7278;
         width: 13px;
@@ -111,15 +254,31 @@
     }
 
     button {
+      border: none;
       display: none;
       height: 42px;
       width: 100%;
       padding: 0 18px;
-      color: #9a9a9a;
+      color: #9b9b9b;
+      background: none;
+
+      @include mq('tablet') {
+        width: calc(100%/3 - 9px);
+        display: block;
+        border-radius: 25px;
+        border: 2px solid #9b9b9b;
+      }
 
       &.active{
         display: block;
         color: #4a4a4a;
+
+        @include mq('tablet') {
+          border-radius: 25px;
+          border: 2px solid #9b9b9b;
+          background-color: rgba(255,255,255,.9);
+        }
+  
       }
     }
   }
@@ -130,12 +289,17 @@
     font-size: 13px;
     line-height: 18px;
     margin-bottom: 25px;
+
+    @include mq('tablet') {
+      font-size: 16px;
+      line-height: 18px;
+    }
   }
 
   &__table {
     color: #000000;
     font-size: 16px;
-    line-height: 19px;
+    line-height: 21px;
 
     div {
       display: flex;

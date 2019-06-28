@@ -210,5 +210,51 @@ $(function () {
 });
 
 
+//product-page popup
+
+$(document).keydown(function(event) { 
+    if (event.keyCode == 27) { 
+        $('body').removeClass('blocked');
+        hidePopup();
+    }
+});
+
+
+function blockBody() {
+    $('body').addClass('blocked');
+}
+
+function unblockBody() {
+    $('body').removeClass('blocked');
+}
+
+function showPopup() {
+        $('.product-page ').addClass('showed');
+   
+}
+function hidePopup() {
+    $('.product-page ').removeClass('showed');
+    
+}
+
+
+$('.first__more').on('click' , function() {
+    showPopup();
+    blockBody();
+});
+
+$('.card-product__more').on('click' , function() {
+    showPopup();
+    blockBody();
+});
+
+
+$('.product-page__close').on('click' , function() {
+    hidePopup();
+    unblockBody();
+});
+
+
+
 
 
