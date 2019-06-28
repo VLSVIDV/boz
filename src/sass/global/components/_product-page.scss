@@ -6,7 +6,7 @@
   left: 0;
   z-index: 10;
   background: url('../images/product-page-bg.jpg');
-  display: none;
+  // display: none;
   overflow-y: scroll;
 
   &__wrapper {
@@ -18,8 +18,8 @@
     right: 0;
     top: 0;
     padding: 10px;
-    width: 6 v0px;
-    height: 6 v0px;
+    width: 60px;
+    height: 60px;
 
     span {
       font-size: 0;
@@ -79,6 +79,49 @@
 
   &__toggler {
     margin-bottom: 25px;
+    max-height: 42px;
+    overflow: visible;
+    z-index: 1;
+  }
+
+  &__toggler-wrapper {
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    border: 2px solid #9b9b9b;
+    background-color: rgba(255,255,255,.9);
+    position: relative;
+    z-index: 2;
+
+    div {
+      width: 50px;
+      height: 42px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        fill: #6d7278;
+        width: 13px;
+        height: 9px;
+      }
+    }
+
+    button {
+      display: none;
+      height: 42px;
+      width: 100%;
+      padding: 0 18px;
+      color: #9a9a9a;
+
+      &.active{
+        display: block;
+        color: #4a4a4a;
+      }
+    }
   }
 
   &__text {

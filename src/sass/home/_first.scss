@@ -9,42 +9,6 @@
     position: relative;
   }
 
-  &__social {
-    display: none;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 2;
-    padding: 0 20px;
-    height: 50px;
-    transform: rotate(-90deg);
-    transform-origin: 25px 25px;
-
-    a {
-      color: #ffffff;
-      font-size: 12px;
-      line-height: 1;
-      font-weight: 700;
-      letter-spacing: 2px;
-      margin-right: 40px;
-      opacity: .7;
-      transition: 300ms ease all;
-
-      &:hover {
-        opacity: 1;
-      }
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-
-    @include mq('tablet') {
-      display: flex;
-      align-items: center;
-    }
-  }
-
   &__scroll-btn {
     display: none;
     position: absolute;

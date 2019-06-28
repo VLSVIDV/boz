@@ -1,0 +1,36 @@
+.social-fixed {
+  z-index: 9;
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 0 20px;
+  height: 50px;
+  transform: rotate(-90deg);
+  transform-origin: 25px 25px;
+  mix-blend-mode: difference;
+
+  a {
+    color: rgba(200, 200,55 , 1);
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-right: 40px;
+    opacity: .8;
+    transition: 300ms ease all;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @include mq('tablet') {
+    display: flex;
+    align-items: center;
+  }
+}
