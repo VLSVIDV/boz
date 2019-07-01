@@ -19,7 +19,7 @@
     opacity: 0.76;
   }
   .container{
-    padding-top: 15px;
+    padding-top: 10px;
     display: flex;
   }
   @include mq('desktop', 'max'){
@@ -149,8 +149,7 @@
     }
   }
   @include mq('laptop', 'max'){
-    width: 28%;
-  }
+    display: none;  }
   @include mq('tablet', 'max'){
     display: none;
   }
