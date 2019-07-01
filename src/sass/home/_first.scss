@@ -11,6 +11,7 @@
 
   &__scroll-btn {
     display: none;
+    cursor: pointer;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -61,6 +62,46 @@
     @include mq('desktop') {
       max-height: 850px;
       min-height: 850px;
+    }
+
+    .slick-dots {
+      transform: translateY(-40px);
+      display: flex;
+      justify-content: center;
+
+      li {
+        width: 10px;
+        height: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin: 0 1px;
+
+        &.slick-active {
+          button {
+  
+            &::before {
+              background: #fff;
+            }
+          }
+        }
+
+        button {
+          width: 7px;
+          height: 7px;
+          padding: 0;
+
+          &::before {
+            width: 7px;
+            height: 7px;
+            content: '';
+            border: 1px solid #fff;
+            border-radius: 50%;
+            opacity: 1;
+          }
+        }
+      }
     }
   }
 
