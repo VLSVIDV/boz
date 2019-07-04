@@ -12,10 +12,6 @@
   filter: blur(10px);
   transition: opacity 300ms ease;
   transition: filter 300ms ease;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
   padding-top: 50px;
   
   &.showed {
@@ -27,7 +23,7 @@
   &__close {
     background: none;
     border: none;
-    position: fixed;
+    position: absolute;
     right: 0;
     top: 0;
     padding: 10px;
