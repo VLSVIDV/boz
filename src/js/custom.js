@@ -314,7 +314,7 @@ function getScrollbarWidth() {
 
     $('.first__scroll-btn').on('click', function() {
         $([document.documentElement, document.body]).animate({
-            scrollTop: $("#section-new").offset().top
+            scrollTop: $("#about-section").offset().top
         }, 1000);
     });
 
@@ -384,5 +384,29 @@ function getScrollbarWidth() {
             prevArrow: $('.product-page__control .prev'),
             nextArrow: $('.product-page__control .next')
     })
+
+    //scrolling to section
+    $('.header__link').on('click', function(e) {
+        e.preventDefault();
+        var where = $(this).attr('href');
+
+        if ($('.header .nav').hasClass('open-menu')) {
+            $('.header .nav').removeClass('open-menu');
+        }
+        
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $('#' + where).offset().top
+        }, 1000);
+    });
+    
+    $('.footer__link').on('click', function(e) {
+        e.preventDefault();
+        var where = $(this).attr('href');
+        
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $('#' + where).offset().top
+        }, 1000);
+    });
+
 });
 
