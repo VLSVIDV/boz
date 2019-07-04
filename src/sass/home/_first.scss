@@ -298,6 +298,15 @@
     border-radius: 30px;
     border: 1px solid #ffffff;
     padding: 0 25px;
+    transition: 300ms all ease;
+
+    &:hover {
+      background: #fff;
+      color: #02826e;
+      svg {
+        fill:#02826e;
+      }
+    }
 
     @include mq('tablet') {
       margin: 0;
@@ -313,6 +322,7 @@
     }
 
     svg {
+      transition: 300ms all ease;
       width: 17px;
       height: 12px;
     }

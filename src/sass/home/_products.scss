@@ -194,6 +194,8 @@
     font-weight: 400;
     line-height: 16px;
 
+    
+
     @include mq('tablet') { 
       max-width: 502px;
       font-size: 18px;

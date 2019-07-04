@@ -25,6 +25,7 @@
 	overflow: hidden;
 	border-radius: btn(border-radius);
 	cursor: pointer;
+	transition: all ease 300ms;
 
 	-ms-touch-action: manipulation;
 	touch-action: manipulation;
@@ -66,6 +67,12 @@
 	color:$color-grey;
 	border: 1px solid $color-grey;
 	max-width: 368px;
+
+	&:hover {
+		background-color: #717171;
+		color: white;
+	}
+
 	@include mq	('tablet', 'max'){
 		max-width: 250px;
 		height: 48px;
@@ -102,8 +109,19 @@
 	font-size: 18px;
 	font-family: $font-family-main;
 	min-width: 349px;
+	transition: all 300ms ease;
+
+	* {
+
+		transition: all 300ms ease;
+	}
+	
 	span{
 		margin-right: 20px;
+	}
+
+	&:hover {
+		background: linear-gradient(180deg, #8bb83e 0%, #2c6416 100%), url("../images/icon-horn.png");
 	}
 }
 

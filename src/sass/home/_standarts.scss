@@ -310,5 +310,17 @@
     border-radius: 30px;
     height: 48px;
   }
+
+
+	transition: all 300ms ease;
+
+	* {
+
+		transition: all 300ms ease;
+	}
+
+  &:hover {
+		background: linear-gradient(180deg, #8bb83e 0%, #2c6416 100%), url("../images/icon-horn.png");
+	}
 }
 /* end standarts */

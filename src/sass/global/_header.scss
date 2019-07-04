@@ -84,6 +84,12 @@
 }
 
 .header__link{
+  opacity: .8;
+	transition: all 300ms ease;
+
+  &:hover {
+    opacity: 1;
+  }
   color:$color-white;
   text-transform: uppercase;
   letter-spacing: 1px;
