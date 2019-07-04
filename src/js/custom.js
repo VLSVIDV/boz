@@ -1,6 +1,4 @@
 $(function () {
-
-
 //add bodyspace
 
 function getScrollbarWidth() {
@@ -46,12 +44,14 @@ function getScrollbarWidth() {
 
     $('.burger').click(function (e) {
         e.preventDefault();
+        blockBody();
         $('#menu').addClass('open-menu');
 
     });
 
     $('.close-menu').click(function (e) {
         e.preventDefault();
+        unblockBody();
         $('#menu').removeClass('open-menu');
 
     });
@@ -105,6 +105,9 @@ function getScrollbarWidth() {
     $(document).keydown(function(evt) {
         if( evt.keyCode === 27 ) {
             $(modal).removeClass('open');
+            $('.popup-form').removeClass('showed');
+            $('#menu').removeClass('open-menu');
+            unblockBody();
             return false;
         }
     });
@@ -392,6 +395,7 @@ function getScrollbarWidth() {
 
         if ($('.header .nav').hasClass('open-menu')) {
             $('.header .nav').removeClass('open-menu');
+            unblockBody();
         }
         
         $([document.documentElement, document.body]).animate({
@@ -408,5 +412,24 @@ function getScrollbarWidth() {
         }, 1000);
     });
 
+    //popup question & poopup request
+    $('.js-call-request').on('click', function(e) {
+        e.preventDefault();
+        $('#request-form').addClass('showed');
+        blockBody();
+    });
+
+    $('.js-call-question').on('click', function(e) {
+        e.preventDefault();
+        $('#question-form').addClass('showed');
+        blockBody();
+    });
+
+    $('.popup-form__close').on('click', function(e) {
+        e.preventDefault();
+        $('.popup-form').removeClass('showed');
+        unblockBody();
+    });
+    
 });
 

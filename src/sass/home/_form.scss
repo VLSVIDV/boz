@@ -39,6 +39,7 @@
   font-family: $font-family-th;
   color: #4a4a4a;
   font-size: 52px;
+  margin-bottom: 30px;
   p{
     font-family: $font-family-main;
     opacity: 0.8;
@@ -53,9 +54,11 @@
   }
   @include mq('laptop', 'max'){
     font-size: 36px;
+    margin-bottom: 30px;
   }
   @include mq('tablet', 'max'){
     font-size: 24px;
+    margin-bottom: 20px;
   }
 }
 
@@ -92,7 +95,7 @@
       margin-bottom: 9px;
     }
   }
-  &:nth-child(7){
+  &.full {
     width: 100%;
     @include mq('laptop', 'max'){
       display: flex;
