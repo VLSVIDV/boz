@@ -1,0 +1,25 @@
+//form
+section.form
+    .container
+        h2.h2.form__title Отправьте нам запрос
+            p …и мы ответим в самое ближайшее время
+        form.form__request
+            .form__group
+                input.form__input(placeholder="Регион/Край/Область")
+            .form__group
+                input.form__input(placeholder="Населенный пункт" required)
+            .form__group
+                input.form__input(placeholder="Ваше имя" required)
+            .form__group
+                input.form__input(type="email" placeholder="E-mail для ответа" required)
+            .form__group
+                input.form__input(placeholder="Название компании")
+            .form__group
+                input.form__input(placeholder="Телефон" type="tel" required)
+            .form__group
+                textarea.form__input.form__area(placeholder="Сообщение" required)
+            .form__group
+                button.btn.btn_green
+                    span Отправить запрос
+                    img(src="images/icon-horn.png")
+        p Нажимая кнопку «Отправить запрос», я подтверждаю свое согласие на обработку моих персональных данных.

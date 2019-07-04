@@ -1,5 +1,182 @@
 /* ==========================================================================
    FOOTER
    ===========================================================================*/
+.footer{
+  background: url("../images/footer-bg.jpg") no-repeat;
+  background-size: cover;
+  min-height: 538px;
+}
 
+.footer__head{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 139px;
+  @include mq ('desktop', 'max'){
+    min-height: 104px;
+  }
+  @include mq ('laptop', 'max'){
+    min-height: 56px;
+  }
+  &:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 100%;
+  }
+}
+
+.footer__list{
+  display: flex;
+  li{
+    &:not(:last-child){
+      margin-right: 130px;
+      @include mq ('desktop-max', 'max'){
+        margin-right: 80px;
+      }
+      @include mq ('desktop', 'max'){
+        margin-right: 40px;
+      }
+      @include mq ('laptop', 'max'){
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+.footer__link{
+  font-size: 16px;
+  color:$color-white;
+  text-transform: uppercase;
+  @include mq ('desktop', 'max'){
+    font-size: 14px;
+  }
+  @include mq ('laptop', 'max'){
+    font-size: 13px;
+  }
+}
+
+.footer__logo{
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 0;
+  width: 74px;
+  height: 139px;
+  background: url("../images/logo-footer.jpg") no-repeat;
+  background-size: cover;
+  display: inline-block;
+  @include mq ('desktop', 'max'){
+    width: 56px;
+    height: 104px;
+  }
+  @include mq ('laptop', 'max'){
+    left: 60px;
+    width: 30px;
+    height: 56px;
+  }
+  @include mq ('tablet', 'max'){
+    left: 0;
+  }
+}
+
+.footer__nav{
+  @include mq ('tablet', 'max'){
+    display: none;
+  }
+}
+
+.burger.footer__burger{
+  display: none;
+  @include mq ('tablet', 'max'){
+    display: block;
+  }
+}
+
+.footer__inner{
+  padding: 28px 0 39px 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  p{
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+  span{
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    opacity: 0.8;
+    line-height: 26px;
+  }
+  &:before{
+    content: '';
+    position: absolute;
+    left: -180px;
+    bottom: 0;
+    height: 1px;
+    width: 40%;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  &:after{
+    content: '';
+    position: absolute;
+    right: -180px;
+    bottom: 0;
+    height: 1px;
+    width: 40%;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.footer__tel{
+  margin-bottom: 11px;
+  font-family: $font-family-th;
+  font-size: 52px;
+}
+
+.footer__mail{
+  font-family: $font-family-th;
+  font-size: 36px;
+}
+
+.footer__bott{
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__social{
+  display: flex;
+}
+
+.footer__icon{
+  display: flex;
+  width: 30px;
+  height: 30px;
+  color:$color-white;
+  svg{
+    width: 30px;
+    height: 30px;
+  }
+  &:not(:last-child){
+    margin-right: 44px;
+  }
+}
+
+.footer__rights{
+  margin-top: 35px;
+  font-size: 16px;
+}
 /* end footer */
