@@ -7,7 +7,7 @@
 @include font-face('ProxiReg', '../fonts/ProximaNovaReg', 400, normal, woff2);
 @include font-face('ProxiBold', '../fonts/ProximaNovaBold', 700, normal, woff2);
 @include font-face('ProxiTh', '../fonts/ProximaNova-Extrabld', 700, normal, woff2);
-
+@include font-face('ProxiLt', '../fonts/ProximaNovaLight', 300, normal, otf);
 
 $font-family-main: 'ProxiReg', "Times New Roman", serif;
 $font-family-bold: 'ProxiBold';

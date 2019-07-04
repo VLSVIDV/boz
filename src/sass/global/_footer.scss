@@ -5,6 +5,11 @@
   background: url("../images/footer-bg.jpg") no-repeat;
   background-size: cover;
   min-height: 538px;
+
+  @include mq ('desktop', 'max'){
+    min-height: initial;
+    padding-bottom: 17px;
+  }
 }
 
 .footer__head{
@@ -34,20 +39,8 @@
 
 .footer__list{
   display: flex;
-  li{
-    &:not(:last-child){
-      margin-right: 130px;
-      @include mq ('desktop-max', 'max'){
-        margin-right: 80px;
-      }
-      @include mq ('desktop', 'max'){
-        margin-right: 40px;
-      }
-      @include mq ('laptop', 'max'){
-        margin-right: 20px;
-      }
-    }
-  }
+  width: 100%;
+  justify-content: space-around;
 }
 
 .footer__link{
@@ -78,7 +71,6 @@
     height: 104px;
   }
   @include mq ('laptop', 'max'){
-    left: 60px;
     width: 30px;
     height: 56px;
   }
@@ -88,6 +80,8 @@
 }
 
 .footer__nav{
+  width: 45%;
+  
   @include mq ('tablet', 'max'){
     display: none;
   }
@@ -107,9 +101,21 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  p{
+
+  @include mq ('laptop', 'max'){
+    font-size: 16px;
+    margin-bottom: 5px;
+    padding: 20px 0 25px;
+  }
+
+  p {
     margin-bottom: 15px;
     font-size: 20px;
+
+    @include mq ('laptop', 'max'){
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
   }
   span{
     display: block;
@@ -117,24 +123,36 @@
     font-size: 16px;
     opacity: 0.8;
     line-height: 26px;
+
+    @include mq ('laptop', 'max'){
+      margin-bottom: 10px;
+    }
   }
   &:before{
     content: '';
     position: absolute;
     left: -180px;
-    bottom: 0;
+    bottom: -17px;
     height: 1px;
     width: 40%;
     background-color: rgba(255, 255, 255, 0.3);
+    
+    @include mq ('desktop', 'max'){
+      width: 50%;
+    }
   }
   &:after{
     content: '';
     position: absolute;
     right: -180px;
-    bottom: 0;
+    bottom: -15px;
     height: 1px;
     width: 40%;
     background-color: rgba(255, 255, 255, 0.3);
+    
+    @include mq ('desktop', 'max'){
+      width: 50%;
+    }
   }
 }
 
@@ -142,11 +160,27 @@
   margin-bottom: 11px;
   font-family: $font-family-th;
   font-size: 52px;
+
+  @include mq ('desktop', 'max'){
+    font-size: 36px;
+  }
+
+  @include mq ('laptop', 'max'){
+    font-size: 24px;
+  }
 }
 
 .footer__mail{
   font-family: $font-family-th;
   font-size: 36px;
+
+  @include mq ('desktop', 'max'){
+    font-size: 24px;
+  }
+
+  @include mq ('laptop', 'max'){
+    font-size: 16px;
+  }
 }
 
 .footer__bott{
@@ -155,6 +189,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @include mq ('desktop', 'max'){
+    padding: 0;
+  }
 }
 
 .footer__social{
@@ -178,5 +216,9 @@
 .footer__rights{
   margin-top: 35px;
   font-size: 16px;
+
+  @include mq ('tablet', 'max'){
+    font-size: 12px;
+  }
 }
 /* end footer */
