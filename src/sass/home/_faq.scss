@@ -173,6 +173,7 @@
     align-items: center;
     justify-content: space-between;
     border: none;
+    min-width: initial;
 
     @include mq('tablet') {
       margin-top: 35px;

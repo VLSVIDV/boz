@@ -18,25 +18,51 @@
             .product-page__art Арт. 234567890
             .product-page__toggler
               .product-page__toggler-wrapper
-                div
+                div.not-close
                   +icon('filter-arrow')
-                button.active
-                  span Описание
-                button
-                  span Свойства
-                button 
-                  span Применение
-            .product-page__text A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar
-            .product-page__table
-              div
-                span Item one
-                span First value
-              div
-                span Item two
-                span Second value
-              div
-                span Item three
-                span Third value
+                button.not-close.active(data-type="description")
+                  span.not-close Описание
+                button.not-close(data-type="props")
+                  span.not-close Свойства
+                button.not-close(data-type="application") 
+                  span.not-close Применение
+            .product-page__tabs
+              .product-page__tab.active(data-type="description")
+                .product-page__text A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar
+                .product-page__table
+                  div
+                    span Item one
+                    span First value
+                  div
+                    span Item two
+                    span Second value
+                  div
+                    span Item three
+                    span Third value
+              .product-page__tab(data-type="props")
+                .product-page__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda asperiores ipsam aliquid voluptas unde sequi minus! Recusandae maiores beatae rem tenetur. Quisquam ratione facere at, aperiam provident explicabo sapiente laborum accusamus excepturi ut quos rerum, quam dignissimos perspiciatis iusto ullam consectetur a rem molestiae voluptatibus. Non qui omnis deleniti dolor doloribus inventore rerum voluptates autem quam quia. Dolorem tenetur inventore aut tempora magni a, eveniet sed delectus praesentium! Quas perspiciatis optio officiis beatae amet repellendus quae animi repudiandae voluptate a iusto commodi, similique, aperiam consectetur sed error distinctio architecto, sint aliquid non debitis repellat adipisci nam. Voluptatibus nostrum asperiores libero.
+                .product-page__table
+                  div
+                    span Item one
+                    span First value
+                  div
+                    span Item two
+                    span Second value
+                  div
+                    span Item three
+                    span Third value
+              .product-page__tab(data-type="application")
+                .product-page__text Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis provident corporis excepturi, minima quia distinctio ut doloribus dolores possimus in, id accusantium eos. Ut, eius, maiores modi dolore aut atque quod nulla doloremque consectetur perspiciatis reiciendis id quasi vel quibusdam repudiandae repellat, officia quae! Error dignissimos sit explicabo exercitationem. Reiciendis!
+                .product-page__table
+                  div
+                    span Item one
+                    span First value
+                  div
+                    span Item two
+                    span Second value
+                  div
+                    span Item three
+                    span Third value
             button.btn.btn_green
               span Задать свой вопрос
               img(src="images/icon-horn.png")
@@ -48,25 +74,51 @@
             .product-page__art Арт. 234567890
             .product-page__toggler
               .product-page__toggler-wrapper
-                div
+                div.not-close
                   +icon('filter-arrow')
-                button.active
-                  span Описание
-                button 
-                  span Свойства
-                button 
-                  span Применение
-            .product-page__text A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar
-            .product-page__table
-              div
-                span Item one
-                span First value
-              div
-                span Item two
-                span Second value
-              div
-                span Item three
-                span Third value
+                button.not-close.active(data-type="description")
+                  span.not-close Описание
+                button.not-close(data-type="props")
+                  span.not-close Свойства
+                button.not-close(data-type="application") 
+                  span.not-close Применение
+            .product-page__tabs
+              .product-page__tab.active(data-type="description")
+                .product-page__text A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar
+                .product-page__table
+                  div
+                    span Item one
+                    span First value
+                  div
+                    span Item two
+                    span Second value
+                  div
+                    span Item three
+                    span Third value
+              .product-page__tab(data-type="props")
+                .product-page__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda asperiores ipsam aliquid voluptas unde sequi minus! Recusandae maiores beatae rem tenetur. Quisquam ratione facere at, aperiam provident explicabo sapiente laborum accusamus excepturi ut quos rerum, quam dignissimos perspiciatis iusto ullam consectetur a rem molestiae voluptatibus. Non qui omnis deleniti dolor doloribus inventore rerum voluptates autem quam quia. Dolorem tenetur inventore aut tempora magni a, eveniet sed delectus praesentium! Quas perspiciatis optio officiis beatae amet repellendus quae animi repudiandae voluptate a iusto commodi, similique, aperiam consectetur sed error distinctio architecto, sint aliquid non debitis repellat adipisci nam. Voluptatibus nostrum asperiores libero.
+                .product-page__table
+                  div
+                    span Item one
+                    span First value
+                  div
+                    span Item two
+                    span Second value
+                  div
+                    span Item three
+                    span Third value
+              .product-page__tab(data-type="application")
+                .product-page__text Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis provident corporis excepturi, minima quia distinctio ut doloribus dolores possimus in, id accusantium eos. Ut, eius, maiores modi dolore aut atque quod nulla doloremque consectetur perspiciatis reiciendis id quasi vel quibusdam repudiandae repellat, officia quae! Error dignissimos sit explicabo exercitationem. Reiciendis!
+                .product-page__table
+                  div
+                    span Item one
+                    span First value
+                  div
+                    span Item two
+                    span Second value
+                  div
+                    span Item three
+                    span Third value
             button.btn.btn_green
               span Задать свой вопрос
               img(src="images/icon-horn.png")
@@ -78,25 +130,51 @@
             .product-page__art Арт. 234567890
             .product-page__toggler
               .product-page__toggler-wrapper
-                div
+                div.not-close
                   +icon('filter-arrow')
-                button.active
-                  span Описание
-                button 
-                  span Свойства
-                button 
-                  span Применение
-            .product-page__text A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar
-            .product-page__table
-              div
-                span Item one
-                span First value
-              div
-                span Item two
-                span Second value
-              div
-                span Item three
-                span Third value
+                button.not-close.active(data-type="description")
+                  span.not-close Описание
+                button.not-close(data-type="props")
+                  span.not-close Свойства
+                button.not-close(data-type="application") 
+                  span.not-close Применение
+            .product-page__tabs
+              .product-page__tab.active(data-type="description")
+                .product-page__text A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar
+                .product-page__table
+                  div
+                    span Item one
+                    span First value
+                  div
+                    span Item two
+                    span Second value
+                  div
+                    span Item three
+                    span Third value
+              .product-page__tab(data-type="props")
+                .product-page__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda asperiores ipsam aliquid voluptas unde sequi minus! Recusandae maiores beatae rem tenetur. Quisquam ratione facere at, aperiam provident explicabo sapiente laborum accusamus excepturi ut quos rerum, quam dignissimos perspiciatis iusto ullam consectetur a rem molestiae voluptatibus. Non qui omnis deleniti dolor doloribus inventore rerum voluptates autem quam quia. Dolorem tenetur inventore aut tempora magni a, eveniet sed delectus praesentium! Quas perspiciatis optio officiis beatae amet repellendus quae animi repudiandae voluptate a iusto commodi, similique, aperiam consectetur sed error distinctio architecto, sint aliquid non debitis repellat adipisci nam. Voluptatibus nostrum asperiores libero.
+                .product-page__table
+                  div
+                    span Item one
+                    span First value
+                  div
+                    span Item two
+                    span Second value
+                  div
+                    span Item three
+                    span Third value
+              .product-page__tab(data-type="application")
+                .product-page__text Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis provident corporis excepturi, minima quia distinctio ut doloribus dolores possimus in, id accusantium eos. Ut, eius, maiores modi dolore aut atque quod nulla doloremque consectetur perspiciatis reiciendis id quasi vel quibusdam repudiandae repellat, officia quae! Error dignissimos sit explicabo exercitationem. Reiciendis!
+                .product-page__table
+                  div
+                    span Item one
+                    span First value
+                  div
+                    span Item two
+                    span Second value
+                  div
+                    span Item three
+                    span Third value
             button.btn.btn_green
               span Задать свой вопрос
               img(src="images/icon-horn.png")

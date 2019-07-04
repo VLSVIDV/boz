@@ -4,6 +4,27 @@
 .docs{
   display: flex;
   flex-direction: column;
+
+  .btn.btn_secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    margin-top: 10px;
+  
+    text-overflow: initial;
+    white-space: normal;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+  
+    @include mq('tablet') { 
+      max-width: 502px;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 16px;
+    }
+  }
 }
 
 .docs__block{

@@ -58,12 +58,12 @@ function getScrollbarWidth() {
 
 
     /*VALIDATE*/
-        $(".js-form--top").validate({
-            submitHandler: function(element) {
-                $(".js-form--top").addClass('validate');
-                $('#modal-thanks').addClass('open');
-            }
-        });
+    $(".js-form--top").validate({
+        submitHandler: function(element) {
+            $(".js-form--top").addClass('validate');
+            $('#modal-thanks').addClass('open');
+        }
+    });
 
     $(".js-form--bottom").validate({
         submitHandler: function(element) {
@@ -222,6 +222,67 @@ function getScrollbarWidth() {
         $(mapCards).removeClass('opened');
     });
 
+    //product-popup tabs
+
+    function productTabToggle() {
+        $('.product-page__toggler').on('click', function(e) {
+            var wrapper = $(this).find('.product-page__toggler-wrapper');
+            
+            if( !$(wrapper).hasClass('opened') ) {
+                $(wrapper).addClass('opened');
+            } 
+    
+            if( e.target.tagName == "BUTTON" || e.target.tagName == "SPAN") {
+    
+                var button = e.target;
+                if (e.target.tagName = "SPAN") {
+                    button = $(e.target).closest('button');
+                }
+                if ($(button).hasClass('active')) {
+                    return;
+                } else {
+                    $(wrapper).find('button').removeClass('active');
+                    $(button).addClass('active');
+                    chooseTab(button);
+                }
+    
+                $(wrapper).removeClass('opened');
+            }
+        });
+    }
+
+    productTabToggle();
+
+    $(window).on('click', function(e) {
+        
+        if (
+            $(e.target).hasClass('product-page__toggler') ||
+            $(e.target).hasClass('product-page__toggler-wrapper') ||
+            e.target.tagName == "use" ||
+            e.target.tagName == "svg" ||
+            $(e.target).hasClass('not-close')
+        ) {
+            return;
+        } else {
+            $('.product-page__toggler-wrapper').removeClass('opened');
+        }
+        
+    });
+
+    function chooseTab(button) {
+        var type = $(button).data('type');
+        var tabList = $(button).closest('.product-page__content').find('.product-page__tab');
+        $(tabList).removeClass('active');
+        
+        for (var i = 0; i < tabList.length; i++) {
+            var item = tabList[i];
+            
+            if ($(item).data('type') == type) {
+                $(item).addClass('active');
+            }
+        }
+    }
+   
 
     //product slider
 

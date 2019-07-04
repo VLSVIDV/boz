@@ -24,6 +24,7 @@
   @include mq('tablet', 'max'){
     padding: 20px 0 40px 0;
   }
+
 }
 
 .new__left{
@@ -80,6 +81,27 @@
   width: 46%;
   @include mq('desktop', 'max'){
     width: 100%;
+  }
+
+  .btn.btn_secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  
+    text-overflow: initial;
+    white-space: normal;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    margin-top: 20px;
+  
+    @include mq('tablet') { 
+      max-width: 502px;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 16px;
+    }
   }
 }
 

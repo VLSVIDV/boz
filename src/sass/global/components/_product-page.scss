@@ -9,7 +9,7 @@
   opacity: 0;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
-  transition: all ease 1000ms;
+  transition: opacity ease 1000ms;
 
 
   &.showed {
@@ -234,8 +234,20 @@
     background-color: rgba(255,255,255,.9);
     position: relative;
     z-index: 2;
+    max-height: 46px;
+    overflow: hidden;
+
+
+    &.opened {
+      max-height: initial;
+
+      svg {
+        transform: scaleY(-1);
+      }
+    }
 
     @include mq('tablet') {
+      display: flex;
       background: none;
       border: none;
       flex-direction: row;
@@ -265,14 +277,16 @@
 
     button {
       border: none;
-      display: none;
       height: 42px;
+      min-height: 42px;
       width: 100%;
       padding: 0 18px;
       color: #9b9b9b;
       background: none;
+      order: 1;
 
       @include mq('tablet') {
+        order: 0;
         width: calc(100%/3 - 9px);
         display: block;
         border-radius: 25px;
@@ -280,10 +294,12 @@
       }
 
       &.active{
+        order: -1;
         display: block;
         color: #4a4a4a;
 
         @include mq('tablet') {
+          order: 0;
           border-radius: 25px;
           border: 2px solid #9b9b9b;
           background-color: rgba(255,255,255,.9);
@@ -303,6 +319,18 @@
     @include mq('tablet') {
       font-size: 16px;
       line-height: 18px;
+    }
+  }
+
+  &__tabs {
+
+  }
+
+  &__tab {
+    display: none;
+
+    &.active {
+      display: block;
     }
   }
 
@@ -335,6 +363,7 @@
     align-items: center;
     justify-content: space-between;
     border: none;
+    min-width: initial;
 
     @include mq('tablet') {
       max-width: 350px;

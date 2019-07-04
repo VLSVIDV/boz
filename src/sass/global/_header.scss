@@ -16,6 +16,21 @@
   @include mq('tablet', 'max'){
     min-height: 51px;
   }
+
+  .btn.btn_order.btn_green {
+    @include mq('tablet', 'max') {
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+
+      img {
+        right: 8px;
+        top: 6px;
+      }
+    }
+  }
 }
 
 .nav{
