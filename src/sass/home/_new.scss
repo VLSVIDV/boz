@@ -142,10 +142,11 @@
   }
 }
 
-.btn_end{
-  display: none!important;
+.btn_end.btn.btn.btn_secondary{
+  display: none;
+
   @include mq('desktop', 'max'){
-    display: block;
+    display: flex;
     margin-top: 40px;
   }
   @include mq('tablet', 'max'){
