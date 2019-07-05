@@ -417,11 +417,13 @@ function getScrollbarWidth() {
         e.preventDefault();
         $('#request-form').addClass('showed');
         blockBody();
+        hidePopup();
     });
 
     $('.js-call-question').on('click', function(e) {
         e.preventDefault();
         $('#question-form').addClass('showed');
+        hidePopup();
         blockBody();
     });
 
