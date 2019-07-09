@@ -354,6 +354,10 @@
     cursor: pointer;
     background-color: darken(#02826e,5%);
 
+    @include mq('desktop') {
+      flex-direction: row;
+    }
+
     &::after {
       position: absolute;
       content: '';
@@ -422,6 +426,11 @@
       height: 134px;
       margin-bottom: 24px;
       display: block;
+
+      @include mq('desktop') {
+        margin-bottom: 0;
+        margin-right: 30px;
+      }
     }
 
     p {

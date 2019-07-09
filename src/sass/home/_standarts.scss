@@ -24,11 +24,16 @@
   }
   @include mq('desktop', 'max'){
     min-height: 1118px;
+    padding-bottom: 0;
   }
   @include mq('laptop', 'max'){
     min-height: 678px;
+
+    padding-bottom: 300px;
+
   }
   @include mq('tablet', 'max'){
+    padding-bottom: 0;
     min-height: 708px;
   }
 }
@@ -77,6 +82,7 @@
 }
 
 .standarts__item{
+  position: relative;
   display: flex;
   margin-top: 43px;
   @include mq('desktop-max', 'max'){
@@ -84,9 +90,14 @@
   }
   @include mq('desktop', 'max'){
     margin-top: 20px;
+    padding-left: 0;
   }
   @include mq('laptop', 'max'){
     margin-top: 13px;
+    padding-left: 180px;
+  }
+  @include mq('tablet', 'max'){
+    padding-left: 70px;
   }
 }
 
@@ -128,7 +139,21 @@
   width: 49%;
   display: flex;
   flex-direction: column;
+  height: 100%;
+
+  @include mq('desktop-max', 'max') { 
+     width: 51%;
+     position: absolute;
+
+    right: 0;
+    max-width: 940px;
+  }
   img{
+    &:nth-child(1){
+      @include mq('desktop', 'max'){
+        opacity: .6;
+      }
+    }
     &:nth-child(2){
       margin-top: -140px;
       @include mq('desktop-max', 'max'){
@@ -138,36 +163,57 @@
     &:nth-child(3){
       margin-top: -70px;
       @include mq('desktop-max', 'max'){
-        margin-top: 70px;
+        margin-top: -70px;
       }
       @include mq('desktop', 'max'){
-        margin-top: 211px;
+        margin-top: auto;
       }
       @include mq('laptop', 'max'){
         display: none;
       }
     }
   }
+  @include mq('desktop', 'max'){
+    display: flex;
+    transform: translateX(50px);
+  }
   @include mq('laptop', 'max'){
-    display: none;  }
+    display: flex;
+    transform: translate(150px,0);
+  }
   @include mq('tablet', 'max'){
     display: none;
   }
 }
 
 .standarts__num{
+  top: 0;
+  svg {
+    fill: none;
+    stroke: white;
+    width: 100%;
+    height: 100%;
+  }
   width: 414px;
   @include mq('desktop-max', 'max'){
     width: 596px;
   }
   @include mq('desktop', 'max'){
-    width: 756px;
+    width: 414px;
+    position: relative;
+    top: 0;
+    left: 0;
   }
   @include mq('laptop', 'max'){
-    width: 156px;
+    position: absolute;
+    width: 165px;
+    height: 89px;
+    left: -40px;
   }
   @include mq('tablet', 'max'){
-    width: 80px;
+    position: absolute;
+    left: -20px;
+    width: 90px;
     height: 43px;
   }
 }

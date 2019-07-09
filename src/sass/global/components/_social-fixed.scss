@@ -8,16 +8,15 @@
   height: 50px;
   transform: rotate(-90deg) translateX(-50%);
   transform-origin: 25px 25px;
-  mix-blend-mode: difference;
 
   a {
-    color: rgba(200, 200,55 , 1);
+    color: rgba(0, 0, 0 , 1);
     font-size: 12px;
     line-height: 1;
     font-weight: 700;
     letter-spacing: 2px;
     margin-right: 40px;
-    opacity: .8;
+    opacity: .5;
     transition: 300ms ease all;
 
     &:hover {
